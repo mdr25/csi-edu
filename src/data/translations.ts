@@ -1,437 +1,689 @@
 export type Language = "id" | "en";
 
 export interface TranslationData {
+  topBar: {
+    tagline: string;
+    contact: string;
+    phone: string;
+  };
   nav: {
-    ecosystem: string;
+    solutions: string;
     products: string;
-    calculator: string;
+    methodology: string;
+    planner: string;
+    caseStudies: string;
     articles: string;
-    testimonials: string;
-    requestDemo: string;
+    contactBtn: string;
   };
   hero: {
-    badge: string;
-    titlePart1: string;
-    titleHighlight: string;
-    titlePart2: string;
-    subtitle: string;
-    ctaPrimary: string;
-    ctaSecondary: string;
-    stats: {
-      teachers: { value: string; label: string };
-      schools: { value: string; label: string };
-      students: { value: string; label: string };
-      books: { value: string; label: string };
+    eyebrow: string;
+    headline: string;
+    subheadline: string;
+    primaryCta: string;
+    secondaryCta: string;
+    metrics: {
+      schools: { value: string; label: string; desc: string };
+      teachers: { value: string; label: string; desc: string };
+      students: { value: string; label: string; desc: string };
+      books: { value: string; label: string; desc: string };
     };
   };
-  ecosystem: {
-    badge: string;
+  solutions: {
+    eyebrow: string;
     title: string;
-    description: string;
-    cycle: {
-      step1: { title: string; desc: string };
-      step2: { title: string; desc: string };
-      step3: { title: string; desc: string };
-      step4: { title: string; desc: string };
-    };
+    subtitle: string;
+    items: Array<{
+      id: string;
+      title: string;
+      subtitle: string;
+      target: string;
+      description: string;
+      deliverables: string[];
+      linkText: string;
+    }>;
+  };
+  methodology: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    pillars: Array<{
+      step: string;
+      title: string;
+      desc: string;
+      detail: string;
+    }>;
   };
   products: {
-    badge: string;
+    eyebrow: string;
     title: string;
     subtitle: string;
     academy: {
-      tag: string;
       name: string;
       role: string;
       desc: string;
-      points: string[];
+      focusAreas: string[];
+      cohortInfo: string;
       cta: string;
       url: string;
     };
     testing: {
-      tag: string;
       name: string;
       role: string;
       desc: string;
-      points: string[];
+      focusAreas: string[];
+      statsInfo: string;
       cta: string;
       url: string;
     };
   };
-  calculator: {
-    badge: string;
+  planner: {
+    eyebrow: string;
     title: string;
     subtitle: string;
-    schoolType: string;
-    teachersCount: string;
-    studentsCount: string;
-    mainGoal: string;
-    goals: {
+    schoolTypeLabel: string;
+    teachersLabel: string;
+    studentsLabel: string;
+    priorityLabel: string;
+    priorities: {
       literacy: string;
-      certification: string;
-      curriculum: string;
+      teacher: string;
+      management: string;
     };
-    resultTitle: string;
-    resultSub: string;
-    metrics: {
-      readingTarget: string;
-      teacherGrowth: string;
-      timeline: string;
-    };
-    recommendationTitle: string;
-    consultCta: string;
+    outputTitle: string;
+    outputSubtitle: string;
+    blueprintTitle: string;
+    ctaButton: string;
+  };
+  caseStudies: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    stories: Array<{
+      quote: string;
+      author: string;
+      role: string;
+      institution: string;
+      outcome: string;
+    }>;
   };
   articles: {
-    badge: string;
+    eyebrow: string;
     title: string;
     subtitle: string;
     readMore: string;
-    minRead: string;
-    viewAll: string;
-  };
-  testimonials: {
-    badge: string;
-    title: string;
-    subtitle: string;
   };
   ctaSection: {
     title: string;
     description: string;
-    primaryBtn: string;
-    secondaryBtn: string;
+    btnPrimary: string;
+    btnSecondary: string;
   };
   modal: {
     title: string;
     subtitle: string;
-    schoolName: string;
-    picName: string;
-    picRole: string;
-    email: string;
-    phone: string;
-    city: string;
-    interest: string;
-    notes: string;
-    submit: string;
+    schoolLabel: string;
+    nameLabel: string;
+    roleLabel: string;
+    phoneLabel: string;
+    emailLabel: string;
+    cityLabel: string;
+    interestLabel: string;
+    notesLabel: string;
+    submitBtn: string;
     successTitle: string;
-    successMessage: string;
-    close: string;
+    successDesc: string;
   };
   footer: {
-    tagline: string;
-    office: string;
-    linksProducts: string;
-    linksCompany: string;
-    linksResources: string;
-    rights: string;
+    description: string;
+    address: string;
+    colSolutions: string;
+    colPrograms: string;
+    colCompany: string;
+    copyright: string;
   };
 }
 
 export const translations: Record<Language, TranslationData> = {
   id: {
+    topBar: {
+      tagline: "Ekosistem Peningkatan Mutu Satuan Pendidikan di Indonesia",
+      contact: "Konsultasi Kemitraan Sekolah",
+      phone: "+62 21 5050 1234",
+    },
     nav: {
-      ecosystem: "Ekosistem",
-      products: "Solusi Produk",
-      calculator: "Simulasi Sekolah",
-      articles: "Artikel & Riset",
-      testimonials: "Cerita Mitra",
-      requestDemo: "Ajukan Kemitraan",
+      solutions: "Solusi Kemitraan",
+      products: "Platform Produk",
+      methodology: "Metodologi",
+      planner: "Perencanaan Program",
+      caseStudies: "Hasil & Dampak",
+      articles: "Riset & Artikel",
+      contactBtn: "Jadwalkan Konsultasi",
     },
     hero: {
-      badge: "Inovasi Ekosistem Pendidikan Indonesia",
-      titlePart1: "Membangun Guru Berdaya,",
-      titleHighlight: "Melesatkan Literasi",
-      titlePart2: "dan Capaian Siswa.",
-      subtitle:
-        "CSI EDU menghadirkan solusi teknologi dan pendampingan terpadu yang membantu sekolah menumbuhkan kompetensi guru, membudayakan literasi membaca, dan mencetak hasil belajar terukur.",
-      ctaPrimary: "Coba Simulasi Dampak Sekolah",
-      ctaSecondary: "Pelajari Ekosistem Kami",
-      stats: {
-        teachers: { value: "12.000+", label: "Guru Berkembang" },
-        schools: { value: "450+", label: "Sekolah Mitra" },
-        students: { value: "180.000+", label: "Siswa Terasesmen" },
-        books: { value: "1,2 Juta+", label: "Buku Dibaca Siswa" },
+      eyebrow: "Catalyst for School Improvement (CSI EDU)",
+      headline: "Pendampingan Terpadu Peningkatan Mutu Guru, Asesmen, dan Budaya Baca Sekolah.",
+      subheadline:
+        "Kami bekerja sama dengan kepala sekolah, yayasan, dan dinas pendidikan untuk mewujudkan perubahan nyata di kelas: meningkatkan kompetensi mengajar guru, membudayakan kebiasaan membaca lewat School Reading System, serta menyediakan data asesmen diagnostik yang terhubung dengan Rapor Pendidikan.",
+      primaryCta: "Rancang Program Sekolah",
+      secondaryCta: "Pelajari Solusi Kemitraan",
+      metrics: {
+        schools: {
+          value: "450+",
+          label: "Sekolah & Yayasan Mitra",
+          desc: "Tingkat SD, SMP, SMA/SMK di berbagai kota di Indonesia",
+        },
+        teachers: {
+          value: "12.000+",
+          label: "Guru Mendapat Pelatihan",
+          desc: "Penguatan kompetensi pedagogik dan kesiapan sertifikasi PPG",
+        },
+        students: {
+          value: "180.000+",
+          label: "Siswa Terasesmen",
+          desc: "Pemetaan kemampuan literasi baca dan penalaran berkala",
+        },
+        books: {
+          value: "1,2 Juta+",
+          label: "Buku Tuntas Dibaca",
+          desc: "Melalui pembiasaan membaca berjenjang School Reading System",
+        },
       },
     },
-    ecosystem: {
-      badge: "Siklus Peningkatan Mutu Berkelanjutan",
-      title: "Satu Ekosistem untuk Seluruh Kebutuhan Sekolah",
-      description:
-        "Bukan sekadar aplikasi lepas. Kami menghubungkan pengembangan pendidik dan capaian siswa dalam satu siklus umpan balik data yang nyata.",
-      cycle: {
-        step1: {
-          title: "1. Diagnosis & Pemetaan Awal",
-          desc: "Asesmen diagnostik komprehensif untuk memetakan level literasi siswa dan kebutuhan kompetensi pedagogis guru.",
+    solutions: {
+      eyebrow: "Solusi Utama",
+      title: "Empat Bidang Pendampingan Mutu Pendidikan",
+      subtitle:
+        "Dirancang untuk memenuhi kebutuhan tata kelola kurikulum, pengembangan tenaga pendidik, dan capaian belajar siswa secara berkesinambungan.",
+      items: [
+        {
+          id: "teacher-dev",
+          title: "Pengembangan Profesional Guru",
+          subtitle: "CSI Academy",
+          target: "Untuk Guru Mata Pelajaran & Wali Kelas",
+          description:
+            "Program pendampingan berbasis cohort dan praktik kelas langsung. Fokus pada perancangan pembelajaran berdiferensiasi, pemanfaatan teknologi kecerdasan buatan untuk asesmen kelas, serta bimbingan kesiapan sertifikasi pendidik (PPG).",
+          deliverables: [
+            "Pelatihan modul ajar sesuai standar Kurikulum Merdeka",
+            "Pendampingan portofolio dan uji kompetensi guru",
+            "Supervisi klinis dan sesi refleksi berkala bersama instruktur",
+            "Sertifikat resmi kelulusan program dan portofolio karya",
+          ],
+          linkText: "Detail Program CSI Academy",
         },
-        step2: {
-          title: "2. Peningkatan Mutu Guru (CSI Academy)",
-          desc: "Pelatihan cohort intensif, mentoring berkala, dan persiapan sertifikasi guru berbasis praktik nyata di kelas.",
+        {
+          id: "literacy-srs",
+          title: "School Reading System (SRS)",
+          subtitle: "NF Testing Center",
+          target: "Untuk Siswa & Koordinator Literasi Sekolah",
+          description:
+            "Sistem pembiasaan membaca buku berjenjang yang dilengkapi uji pemahaman (bukan sekadar menghitung lembar halaman). Menggunakan mekanisme apresiasi berbasis poin yang mendorong motivasi membaca mandiri siswa sepanjang semester.",
+          deliverables: [
+            "Katalog buku bacaan berjenjang sesuai tingkat kelas",
+            "Kuis pemahaman isi bacaan terintegrasi digital",
+            "Pencatatan rekap bacaan siswa dan rapor literasi kelas",
+            "Panduan bagi guru untuk mengintegrasikan bacaan dalam pelajaran",
+          ],
+          linkText: "Pelajari Mekanisme SRS",
         },
-        step3: {
-          title: "3. Akselerasi Budaya Baca Siswa (SRS & Testing Center)",
-          desc: "Sistem membaca berbasis gamifikasi point-system yang mengubah literasi menjadi kebiasaan menyenangkan siswa.",
+        {
+          id: "assessment",
+          title: "Asesmen Diagnostik & Analisis Capaian",
+          subtitle: "Testing & Diagnostic Services",
+          target: "Untuk Tim Kurikulum & Manajemen Sekolah",
+          description:
+            "Penyelenggaraan tes diagnostik berkala yang memetakan kemampuan literasi baca, numerasi, dan penalaran siswa. Hasil tes disajikan dalam analitik yang memudahkan guru menyusun tindak lanjut remedial maupun pengayaan.",
+          deliverables: [
+            "Bank soal standar setara Asesmen Nasional (ANBK)",
+            "Laporan profil kemampuan siswa per kelas dan per kompetensi",
+            "Rekomendasi tindakan pedagogis untuk guru bidang studi",
+            "Data pembanding kemajuan antar semester",
+          ],
+          linkText: "Layanan Asesmen Diagnostik",
         },
-        step4: {
-          title: "4. Analitik Dampak & Perbaikan Berulang",
-          desc: "Dashboard laporan terpadu bagi kepala sekolah dan yayasan untuk evaluasi kebijakan kurikulum sekolah.",
+        {
+          id: "school-governance",
+          title: "Konsultasi Manajemen & Rapor Pendidikan",
+          subtitle: "School Improvement Partnership",
+          target: "Untuk Kepala Sekolah & Pengurus Yayasan",
+          description:
+            "Fasilitasi bagi pimpinan sekolah dalam menyusun Perencanaan Berbasis Data (PBD) dari hasil Rapor Pendidikan. Membantu yayasan menentukan alokasi program prioritas dan indikator ketercapaian mutu akreditasi.",
+          deliverables: [
+            "Audit awal mutu akademik dan kesiapan iklim sekolah",
+            "Penyusunan peta jalan (roadmap) mutu sekolah 1–3 tahun",
+            "Pelatihan supervisi akademik bagi kepala sekolah dan wakil kurikulum",
+            "Laporan evaluasi kemitraan berkala kepada yayasan",
+          ],
+          linkText: "Konsultasi Tata Kelola Mutu",
         },
-      },
+      ],
+    },
+    methodology: {
+      eyebrow: "Alur Kerja Sama",
+      title: "Metodologi Pendampingan Berkelanjutan",
+      subtitle:
+        "Kami tidak menjual program sekali selesai. CSI EDU mendampingi sekolah dalam siklus empat tahap yang memastikan perubahan benar-benar terjadi di ruang kelas.",
+      pillars: [
+        {
+          step: "01",
+          title: "Diagnosa & Pemetaan Kebutuhan",
+          desc: "Audit awal kompetensi guru dan pengukuran dasar (baseline) tingkat literasi membaca siswa menggunakan instrumen diagnostik terstandar.",
+          detail: "Waktu: 2–3 pekan pertama kemitraan",
+        },
+        {
+          step: "02",
+          title: "Perancangan Program Bersama",
+          desc: "Menyepakati target capaian bersama kepala sekolah dan yayasan, menentukan modul pelatihan guru, serta menyusun kalender implementasi.",
+          detail: "Penyesuaian target sesuai Rapor Pendidikan sekolah",
+        },
+        {
+          step: "03",
+          title: "Penerapan & Pendampingan Kelas",
+          desc: "Pelaksanaan pelatihan guru (CSI Academy) bersamaan dengan peluncuran School Reading System (SRS) di kelas, didampingi fasilitator lapangan.",
+          detail: "Monitoring mingguan & pendampingan teknis berkala",
+        },
+        {
+          step: "04",
+          title: "Evaluasi Hasil & Rencana Lanjutan",
+          desc: "Pengukuran akhir semester (post-test) untuk melihat pertumbuhan literasi siswa, rekap sertifikasi guru, dan penyusunan laporan pertanggungjawaban bagi yayasan.",
+          detail: "Laporan data analitik komprehensif",
+        },
+      ],
     },
     products: {
-      badge: "Dua Pilar Utama",
-      title: "Solusi Terpadu yang Dirancang untuk Sekolah Nyata",
+      eyebrow: "Ekosistem Platform",
+      title: "Dua Produk Inti yang Saling Melengkapi",
       subtitle:
-        "Kedua pilar kami dapat diterapkan secara terpadu maupun bertahap sesuai kesiapan sekolah Anda.",
+        "Platform teknologi yang dibangun berdasarkan riset dan pengalaman mendampingi ratusan ruang kelas di Indonesia.",
       academy: {
-        tag: "Khusus Guru & Tenaga Pendidik",
         name: "CSI Academy",
-        role: "Platform Pengembangan Profesional Guru",
-        desc: "Program pengembangan kapasitas guru yang berkelanjutan, terstruktur, dan berbasis komunitas — dari penguatan pedagogi, pemanfaatan AI, hingga kesiapan sertifikasi pendidik (PPG).",
-        points: [
-          "Pelatihan Berbasis Cohort & Praktek Kelas Langsung",
-          "Program Persiapan Sertifikasi Guru Terstruktur",
-          "Komunitas Pendidik Saling Berbagi Praktik Baik",
-          "Sertifikat Resmi & Portofolio Karya Mengajar",
+        role: "Platform Pelatihan & Komunitas Pendidik",
+        desc: "LMS dan ruang belajar profesional bagi guru Indonesia untuk meningkatkan kemampuan pedagogi, menyusun perangkat ajar, dan mempersiapkan sertifikasi pendidik (PPG).",
+        focusAreas: [
+          "Kurikulum pelatihan berjenjang berbasis praktik",
+          "Komunitas belajar (Kombel) antar guru se-Indonesia",
+          "Bimbingan penyusunan RPP/Modul Ajar berdiferensiasi",
+          "Evaluasi berkala bersama praktisi dan pengawas pendidikan",
         ],
-        cta: "Kunjungi CSI Academy",
+        cohortInfo: "Batch pelatihan baru dibuka setiap awal semester",
+        cta: "Kunjungi Portal CSI Academy",
         url: "https://csi-academy.id",
       },
       testing: {
-        tag: "Khusus Siswa & Pengukuran Sekolah",
         name: "NF Testing Center & SRS",
-        role: "Asesmen Siswa & School Reading System",
-        desc: "Platform asesmen berbasis gamifikasi dan sistem membaca terpadu yang membuat kemajuan membaca siswa terlihat jelas, diberi apresiasi, dan dapat ditindaklanjuti guru.",
-        points: [
-          "School Reading System (SRS) dengan Poin & Gamifikasi",
-          "Asesmen Diagnostik & Analitik Hasil Belajar Real-time",
-          "Bank Soal Standar Asesmen Nasional & Literasi",
-          "Laporan Akreditasi & Rapor Literasi Sekolah Lengkap",
+        role: "Platform Asesmen Siswa & Budaya Baca",
+        desc: "Sistem digital yang mengelola pelaksanaan asesmen diagnostik kemampuan siswa serta menjalankan program School Reading System (SRS) dengan mekanisme pencatatan dan evaluasi terpadu.",
+        focusAreas: [
+          "Pencatatan dan verifikasi buku bacaan siswa",
+          "Kuis pemahaman bacaan untuk menguji daya serap teks",
+          "Dashboard pemantauan wali kelas dan koordinator literasi",
+          "Integrasi format bank soal setara standar Asesmen Nasional",
         ],
-        cta: "Kunjungi Testing Center",
+        statsInfo: "Telah mengelola lebih dari 180.000 riwayat asesmen siswa",
+        cta: "Kunjungi NF Testing Center",
         url: "https://nf-testingcenter.org",
       },
     },
-    calculator: {
-      badge: "Fitur Interaktif Calon Mitra",
-      title: "Kalkulator Simulasi Kebutuhan & Dampak Sekolah",
+    planner: {
+      eyebrow: "Simulasi Program",
+      title: "Rancang Kerangka Program untuk Sekolah Anda",
       subtitle:
-        "Masukkan gambaran sekolah Anda dan lihat estimasi dampak terukur yang bisa dicapai bersama CSI EDU.",
-      schoolType: "Jenjang Satuan Pendidikan",
-      teachersCount: "Estimasi Jumlah Guru",
-      studentsCount: "Estimasi Jumlah Siswa",
-      mainGoal: "Prioritas Target Peningkatan",
-      goals: {
-        literacy: "Melesatkan Minat Baca & Rapor Literasi Siswa",
-        certification: "Upskilling & Kelulusan Sertifikasi Guru",
-        curriculum: "Pembenahan Asesmen & Standar Akreditasi",
+        "Tentukan profil dan kebutuhan sekolah Anda untuk mendapatkan estimasi rancangan program pendampingan yang sesuai.",
+      schoolTypeLabel: "Bentuk Satuan Pendidikan",
+      teachersLabel: "Jumlah Guru yang Dilibatkan",
+      studentsLabel: "Jumlah Siswa Sasaran Program",
+      priorityLabel: "Fokus Prioritas Tahun Ajaran Ini",
+      priorities: {
+        literacy: "Peningkatan Literasi Membaca & Indeks Rapor Pendidikan (ANBK)",
+        teacher: "Peningkatan Kompetensi Guru & Kesiapan Sertifikasi (PPG)",
+        management: "Pembenahan Asesmen & Tata Kelola Mutu Akademik Yayasan",
       },
-      resultTitle: "Estimasi Rencana Dampak 1 Tahun",
-      resultSub: "Proyeksi berdasarkan data rata-rata 450+ sekolah mitra CSI EDU:",
-      metrics: {
-        readingTarget: "Target Volume Membaca",
-        teacherGrowth: "Guru Tervalidasi Naik Level",
-        timeline: "Fase Pendampingan",
-      },
-      recommendationTitle: "Rekomendasi Paket Program",
-      consultCta: "Dapatkan Proposal & Presentasi Detail",
+      outputTitle: "Rekomendasi Kerangka Program CSI EDU",
+      outputSubtitle: "Berdasarkan parameter satuan pendidikan yang Anda pilih:",
+      blueprintTitle: "Rancangan Paket Pendampingan",
+      ctaButton: "Ajukan Pembahasan Proposal Program Ini",
+    },
+    caseStudies: {
+      eyebrow: "Kisah Kemitraan",
+      title: "Dampak Nyata di Sekolah Mitra",
+      subtitle:
+        "Pengalaman langsung dari para pimpinan yayasan, kepala sekolah, dan guru yang telah mengimplementasikan program CSI EDU.",
+      stories: [
+        {
+          quote:
+            "Pendekatan CSI EDU sangat membantu kami karena tidak berhenti pada pelatihan teori. Instruktur hadir mendampingi guru kami memeriksa modul ajar dan mengamati praktik di kelas secara langsung.",
+          author: "Drs. Bambang Sutrisno",
+          role: "Direktur Pendidikan",
+          institution: "Yayasan Pendidikan Nusantara",
+          outcome: "88% guru berhasil menyusun modul ajar berdiferensiasi mandiri",
+        },
+        {
+          quote:
+            "School Reading System mengubah sudut pandang anak-anak kami tentang membaca. Dengan adanya kuis pemahaman dan sistem apresiasi poin, mereka termotivasi menuntaskan buku bacaan setiap pekan.",
+          author: "Ahmad Fauzi, S.Pd.",
+          role: "Koordinator Program Literasi",
+          institution: "SD Islam Terpadu Al-Hikmah",
+          outcome: "Kenaikan rata-rata 14 buku tuntas dibaca per siswa per tahun",
+        },
+        {
+          quote:
+            "Laporan asesmen berkala dari NF Testing Center memberi kami kejelasan data yang selama ini tidak terlihat dari nilai ujian harian biasa. Kami tahu persis di sub-materi mana siswa membutuhkan penguatan.",
+          author: "Maria Simatupang, M.Pd.",
+          role: "Wakil Kepala Sekolah Bidang Kurikulum",
+          institution: "SMA Santo Yosef Medan",
+          outcome: "Kenaikan skor literasi membaca pada Rapor Pendidikan ANBK sebesar 32%",
+        },
+      ],
     },
     articles: {
-      badge: "Wawasan & Riset Lapangan",
-      title: "Wawasan Pendidikan Terkini",
+      eyebrow: "Publikasi & Riset",
+      title: "Artikel dan Panduan Pendidikan",
       subtitle:
-        "Ditulis langsung oleh peneliti, instruktur, dan praktisi pendidikan CSI EDU.",
-      readMore: "Baca Selengkapnya",
-      minRead: "menit baca",
-      viewAll: "Lihat Semua Artikel",
-    },
-    testimonials: {
-      badge: "Testimoni & Kepercayaan",
-      title: "Dipercaya oleh Lebih dari 450+ Sekolah & Institusi",
-      subtitle: "Dengarkan pengalaman langsung dari para kepala sekolah, guru, dan pengurus yayasan.",
+        "Kajian dan panduan praktis yang ditulis oleh tim peneliti, konsultan, dan praktisi pendidikan CSI EDU.",
+      readMore: "Baca Artikel Lengkap",
     },
     ctaSection: {
-      title: "Siap Mewujudkan Lompatan Mutu di Sekolah Anda?",
+      title: "Diskusikan Kebutuhan Peningkatan Mutu Sekolah Anda",
       description:
-        "Diskusikan kebutuhan spesifik guru dan siswa Anda bersama tim konsultan pendidikan CSI EDU. Mulai dari sesi konsultasi gratis atau program pilot skala kecil.",
-      primaryBtn: "Jadwalkan Diskusi & Demo",
-      secondaryBtn: "Hubungi via WhatsApp",
+        "Tim konsultan pendidikan kami siap memaparkan kerangka kerja sama, memberikan contoh instrumen asesmen, dan menyusun skema program yang sesuai dengan kondisi sekolah Anda.",
+      btnPrimary: "Jadwalkan Pertemuan Konsultasi",
+      btnSecondary: "Hubungi Melalui WhatsApp",
     },
     modal: {
-      title: "Formulir Permohonan Demo & Diskusi Kemitraan",
-      subtitle: "Isi data singkat berikut. Tim konsultan CSI EDU akan menghubungi Anda dalam 1x24 jam kerja.",
-      schoolName: "Nama Sekolah / Yayasan",
-      picName: "Nama Lengkap Anda",
-      picRole: "Jabatan (Kepala Sekolah / Kurikulum / Pengurus Yayasan)",
-      email: "Alamat Email Resmi",
-      phone: "Nomor WhatsApp",
-      city: "Kota / Kabupaten",
-      interest: "Fokus Program yang Diminati",
-      notes: "Kendala atau Kebutuhan Spesifik Sekolah Saat Ini",
-      submit: "Kirim Permohonan Kemitraan",
-      successTitle: "Permohonan Terkirim!",
-      successMessage: "Terima kasih telah menghubungi CSI EDU. Tim konsultan kami akan segera menghubungi nomor WhatsApp Anda untuk menjadwalkan sesi paparan online.",
-      close: "Tutup",
+      title: "Permohonan Diskusi & Presentasi Program",
+      subtitle:
+        "Silakan isi formulir singkat berikut. Tim konsultan CSI EDU akan menghubungi Anda untuk mengonfirmasi jadwal pertemuan daring atau kunjungan ke sekolah.",
+      schoolLabel: "Nama Sekolah atau Yayasan",
+      nameLabel: "Nama Lengkap Narahubung",
+      roleLabel: "Jabatan di Sekolah",
+      phoneLabel: "Nomor WhatsApp Aktif",
+      emailLabel: "Alamat Email Resmi",
+      cityLabel: "Kabupaten / Kota",
+      interestLabel: "Layanan yang Ingin Didiskusikan",
+      notesLabel: "Catatan Kebutuhan atau Kendala Sekolah Saat Ini",
+      submitBtn: "Kirim Permohonan Diskusi",
+      successTitle: "Permohonan Anda Telah Kami Terima",
+      successDesc:
+        "Terima kasih atas minat Anda pada program CSI EDU. Tim kami akan segera menghubungi nomor WhatsApp Anda dalam waktu 1x24 jam kerja untuk menentukan jadwal paparan program.",
     },
     footer: {
-      tagline:
-        "Ekosistem teknologi dan pendampingan pendidikan untuk memajukan kompetensi guru, budaya baca siswa, dan tata kelola mutu sekolah di seluruh Indonesia.",
-      office: "Depok & Jakarta, Indonesia",
-      linksProducts: "Solusi Produk",
-      linksCompany: "Tentang Kami",
-      linksResources: "Sumber Daya",
-      rights: "Hak Cipta Dilindungi. CSI EDU — Catalyst for School Improvement.",
+      description:
+        "CSI EDU (Catalyst for School Improvement) adalah lembaga penyedia ekosistem pendampingan dan teknologi pendidikan yang berfokus pada transformasi mutu sekolah, kapasitas guru, dan penguatan literasi membaca siswa di Indonesia.",
+      address: "Kompleks Pendidikan & Riset, Depok & Jakarta, Indonesia",
+      colSolutions: "Solusi Kemitraan",
+      colPrograms: "Platform Produk",
+      colCompany: "Lembaga",
+      copyright: "Hak cipta dilindungi undang-undang. CSI EDU — Catalyst for School Improvement.",
     },
   },
   en: {
+    topBar: {
+      tagline: "Educational Ecosystem for School Improvement in Indonesia",
+      contact: "School Partnership Consultation",
+      phone: "+62 21 5050 1234",
+    },
     nav: {
-      ecosystem: "Ecosystem",
-      products: "Products",
-      calculator: "School Simulator",
-      articles: "Articles & Insights",
-      testimonials: "Stories",
-      requestDemo: "Partner with Us",
+      solutions: "Partnership Solutions",
+      products: "Platforms",
+      methodology: "Methodology",
+      planner: "Program Planner",
+      caseStudies: "Outcomes & Impact",
+      articles: "Research & Insights",
+      contactBtn: "Schedule Consultation",
     },
     hero: {
-      badge: "Empowering Indonesian Education",
-      titlePart1: "Empowering Educators,",
-      titleHighlight: "Accelerating Literacy",
-      titlePart2: "and Student Outcomes.",
-      subtitle:
-        "CSI EDU builds technology-enabled solutions and sustained school partnerships that develop teacher mastery, instill a joy for reading, and produce measurable student success.",
-      ctaPrimary: "Simulate School Impact",
-      ctaSecondary: "Explore Our Ecosystem",
-      stats: {
-        teachers: { value: "12,000+", label: "Teachers Developed" },
-        schools: { value: "450+", label: "Partner Schools" },
-        students: { value: "180,000+", label: "Assessed Students" },
-        books: { value: "1.2M+", label: "Books Read by Students" },
+      eyebrow: "Catalyst for School Improvement (CSI EDU)",
+      headline: "Integrated School Improvement: Teacher Development, Assessment & Student Literacy.",
+      subheadline:
+        "We collaborate with school leadership, foundations, and education authorities across Indonesia to drive classroom transformation: developing teacher instructional mastery, establishing reading habits through the School Reading System, and providing diagnostic assessment analytics aligned with national standards.",
+      primaryCta: "Design School Program",
+      secondaryCta: "Explore Solutions",
+      metrics: {
+        schools: {
+          value: "450+",
+          label: "Partner Schools & Foundations",
+          desc: "Elementary, junior, and senior secondary schools nationwide",
+        },
+        teachers: {
+          value: "12,000+",
+          label: "Educators Trained",
+          desc: "Instructional competency and teacher certification preparation",
+        },
+        students: {
+          value: "180,000+",
+          label: "Students Assessed",
+          desc: "Systematic evaluation of reading literacy and core competencies",
+        },
+        books: {
+          value: "1.2M+",
+          label: "Books Read and Verified",
+          desc: "Driven by the School Reading System leveled reading framework",
+        },
       },
     },
-    ecosystem: {
-      badge: "Continuous Improvement Loop",
-      title: "One Integrated Ecosystem for School Transformation",
-      description:
-        "Far beyond disconnected software tools. We bridge educator development and student achievement through an actionable, evidence-driven feedback loop.",
-      cycle: {
-        step1: {
-          title: "1. Baseline Diagnostic Assessment",
-          desc: "Comprehensive diagnostic testing to benchmark student reading literacy levels and identify teacher pedagogical upskilling needs.",
+    solutions: {
+      eyebrow: "Core Capabilities",
+      title: "Four Pillars of School Quality Improvement",
+      subtitle:
+        "Built to address curriculum governance, continuous educator development, and student learning outcomes.",
+      items: [
+        {
+          id: "teacher-dev",
+          title: "Teacher Professional Development",
+          subtitle: "CSI Academy",
+          target: "For Subject Teachers & Classroom Instructors",
+          description:
+            "Sustained, cohort-based professional learning embedded in real classroom instruction. Focuses on differentiated instruction, AI classroom applications, and structured preparation for national teacher certification (PPG).",
+          deliverables: [
+            "Instructional module design aligned with national standards",
+            "Teacher portfolio coaching and competency review",
+            "Clinical supervision and structured peer reflection cycles",
+            "Verified program completion certification and portfolio",
+          ],
+          linkText: "CSI Academy Details",
         },
-        step2: {
-          title: "2. Teacher Professional Growth (CSI Academy)",
-          desc: "Cohort-based learning, practical mentorship, and certification readiness embedded in day-to-day classroom realities.",
+        {
+          id: "literacy-srs",
+          title: "School Reading System (SRS)",
+          subtitle: "NF Testing Center",
+          target: "For Students & School Literacy Coordinators",
+          description:
+            "A leveled reading cultivation program featuring digital comprehension checkpoints. Utilizes a point-based recognition framework that motivates self-driven reading habits across the academic semester.",
+          deliverables: [
+            "Curated grade-appropriate leveled book catalog",
+            "Digital reading comprehension quizzes",
+            "Classroom reading analytics and student progress tracking",
+            "Teacher guides for cross-curricular reading integration",
+          ],
+          linkText: "Explore SRS Framework",
         },
-        step3: {
-          title: "3. Student Reading Acceleration (SRS & Testing)",
-          desc: "Gamified reading literacy system with points and milestones that turns reading into an inspiring, self-driven habit.",
+        {
+          id: "assessment",
+          title: "Diagnostic Assessment & Analytics",
+          subtitle: "Testing & Diagnostic Services",
+          target: "For Curriculum Heads & Academic Leadership",
+          description:
+            "Periodic diagnostic assessments measuring student reading comprehension, numeracy, and reasoning abilities. Actionable analytics enable instructors to implement timely remediation and enrichment.",
+          deliverables: [
+            "National assessment standard-aligned question bank",
+            "Competency breakdown reports by student and classroom",
+            "Pedagogical recommendations for subject matter teachers",
+            "Comparative semester-over-semester progress data",
+          ],
+          linkText: "Diagnostic Testing Services",
         },
-        step4: {
-          title: "4. School Data Analytics & Continuous Iteration",
-          desc: "Actionable dashboards for principals and foundation boards to guide curriculum decisions and track school accreditation metrics.",
+        {
+          id: "school-governance",
+          title: "School Governance & Quality Planning",
+          subtitle: "School Improvement Partnership",
+          target: "For Principals & Foundation Board Directors",
+          description:
+            "Strategic advisory helping school leaders implement Data-Based Planning (Perencanaan Berbasis Data) from national school report card indicators. Prioritizes investment allocations and accreditation milestones.",
+          deliverables: [
+            "Baseline institutional climate and academic audit",
+            "1-3 year strategic school improvement roadmap",
+            "Academic supervisory coaching for administrative teams",
+            "Comprehensive periodic reporting for governing boards",
+          ],
+          linkText: "Quality Governance Advisory",
         },
-      },
+      ],
+    },
+    methodology: {
+      eyebrow: "Partnership Framework",
+      title: "Sustainable School Improvement Methodology",
+      subtitle:
+        "We do not provide one-off workshops. CSI EDU partners with institutions through a four-phase cycle ensuring tangible instructional change in classrooms.",
+      pillars: [
+        {
+          step: "01",
+          title: "Diagnosis & Needs Assessment",
+          desc: "Baseline evaluation of teacher pedagogical competencies and standardized student reading literacy diagnostics.",
+          detail: "Timeline: Weeks 1–3 of partnership",
+        },
+        {
+          step: "02",
+          title: "Co-Designed Program Blueprint",
+          desc: "Establishing measurable quality objectives with school leaders, selecting customized teacher modules, and scheduling execution.",
+          detail: "Tailored to the school's accreditation and report card data",
+        },
+        {
+          step: "03",
+          title: "Implementation & Classroom Support",
+          desc: "Delivery of teacher cohort programs (CSI Academy) concurrent with School Reading System rollout, supported by onsite field mentors.",
+          detail: "Bi-weekly mentoring and instructional monitoring",
+        },
+        {
+          step: "04",
+          title: "Outcomes Evaluation & Roadmap Renewal",
+          desc: "Semester-end assessment benchmarking student progress, teacher certification completions, and formal reporting for governing boards.",
+          detail: "Comprehensive data-driven report card",
+        },
+      ],
     },
     products: {
-      badge: "Two Core Pillars",
-      title: "Purpose-Built Solutions for Real Classrooms",
+      eyebrow: "Platform Ecosystem",
+      title: "Two Complementary Flagship Products",
       subtitle:
-        "Our two core platforms work seamlessly together or can be phased in based on your school's current priorities.",
+        "Proprietary technology platforms refined through fieldwork across hundreds of Indonesian classrooms.",
       academy: {
-        tag: "For Teachers & Educators",
         name: "CSI Academy",
-        role: "Teacher Professional Development Platform",
-        desc: "Sustained, practical professional development for educators — from foundational pedagogy and AI-assisted teaching to teacher certification readiness.",
-        points: [
-          "Cohort-Based Courses with Practical Feedback",
-          "Structured Teacher Certification Preparation",
-          "Active Educator Community Sharing Best Practices",
-          "Recognized Certification & Teaching Portfolio",
+        role: "Educator Learning & Community Platform",
+        desc: "A dedicated professional LMS for educators to upgrade pedagogical skills, craft differentiated lesson plans, and prepare for national certification.",
+        focusAreas: [
+          "Practice-grounded progressive teacher curriculum",
+          "Nationwide professional learning communities",
+          "Mentorship on lesson plan and assessment design",
+          "Periodic feedback from master trainers and supervisors",
         ],
-        cta: "Visit CSI Academy",
+        cohortInfo: "New training cohorts launch at the start of each semester",
+        cta: "Visit CSI Academy Portal",
         url: "https://csi-academy.id",
       },
       testing: {
-        tag: "For Students & School Metrics",
         name: "NF Testing Center & SRS",
-        role: "Assessment & School Reading System",
-        desc: "A gamified student assessment and reading literacy ecosystem that makes progress visible, celebrated by parents, and actionable for teachers.",
-        points: [
-          "School Reading System (SRS) with Gamified Points",
-          "Diagnostic Testing & Real-time Competency Analytics",
-          "Standardized National Literacy & Competency Question Bank",
-          "Comprehensive School Accreditation & Literacy Reporting",
+        role: "Student Assessment & Literacy Platform",
+        desc: "An integrated assessment engine managing diagnostic exams and powering the School Reading System with automated verification and reporting.",
+        focusAreas: [
+          "Student book reading tracking and digital logging",
+          "Automated comprehension quizzes evaluating text mastery",
+          "Monitoring dashboards for teachers and literacy heads",
+          "Item bank calibrated to national educational standards",
         ],
-        cta: "Visit Testing Center",
+        statsInfo: "Over 180,000 student assessment records managed to date",
+        cta: "Visit NF Testing Center",
         url: "https://nf-testingcenter.org",
       },
     },
-    calculator: {
-      badge: "Interactive Partner Tool",
-      title: "School Impact & Needs Simulator",
+    planner: {
+      eyebrow: "Program Simulation",
+      title: "Design a Program Blueprint for Your School",
       subtitle:
-        "Input your school scale and discover the projected measurable outcomes your school can achieve with CSI EDU.",
-      schoolType: "Education Level",
-      teachersCount: "Estimated Number of Teachers",
-      studentsCount: "Estimated Number of Students",
-      mainGoal: "Primary Strategic Priority",
-      goals: {
-        literacy: "Accelerate Student Reading Culture & Literacy Index",
-        certification: "Teacher Upskilling & Certification Readiness",
-        curriculum: "Assessment Modernization & Accreditation Prep",
+        "Select your institution's profile to view an indicative improvement roadmap and project scope.",
+      schoolTypeLabel: "Institution Level",
+      teachersLabel: "Number of Participating Teachers",
+      studentsLabel: "Target Number of Students",
+      priorityLabel: "Primary Academic Priority",
+      priorities: {
+        literacy: "Reading Literacy & National Standard Benchmark (ANBK)",
+        teacher: "Teacher Instructional Mastery & Certification Readiness (PPG)",
+        management: "Assessment Modernization & Multi-Campus Governance",
       },
-      resultTitle: "Estimated 1-Year Impact Projection",
-      resultSub: "Projections based on historical averages across 450+ CSI EDU partner schools:",
-      metrics: {
-        readingTarget: "Projected Books Read",
-        teacherGrowth: "Teachers Advanced in Competency",
-        timeline: "Implementation Roadmap",
-      },
-      recommendationTitle: "Recommended Program Blueprint",
-      consultCta: "Request Custom School Proposal",
+      outputTitle: "Recommended CSI EDU Program Scope",
+      outputSubtitle: "Projected scope based on selected institutional parameters:",
+      blueprintTitle: "Proposed Engagement Blueprint",
+      ctaButton: "Request Detailed Proposal for This Blueprint",
+    },
+    caseStudies: {
+      eyebrow: "Partnership Outcomes",
+      title: "Evidence of Impact Across Partner Schools",
+      subtitle:
+        "Firsthand accounts from school foundation directors, principals, and teachers who have implemented CSI EDU initiatives.",
+      stories: [
+        {
+          quote:
+            "CSI EDU's approach made all the difference because it went far beyond theoretical lectures. Their coaches worked directly with our faculty, examining actual lesson plans and conducting classroom observations.",
+          author: "Drs. Bambang Sutrisno",
+          role: "Education Director",
+          institution: "Yayasan Pendidikan Nusantara",
+          outcome: "88% of teachers independently designed differentiated lesson plans",
+        },
+        {
+          quote:
+            "The School Reading System transformed our students' relationship with books. With structured comprehension quizzes and recognition milestones, reading became a consistent weekly celebration.",
+          author: "Ahmad Fauzi, S.Pd.",
+          role: "Literacy Program Coordinator",
+          institution: "SD Islam Terpadu Al-Hikmah",
+          outcome: "Average of 14 complete books read per student each academic year",
+        },
+        {
+          quote:
+            "Diagnostic reports from NF Testing Center provided clarity that daily homework scores could never show. We identified exactly which cognitive standards required immediate instructional reinforcement.",
+          author: "Maria Simatupang, M.Pd.",
+          role: "Vice Principal for Curriculum",
+          institution: "SMA Santo Yosef Medan",
+          outcome: "32% increase in school reading literacy index on national assessments",
+        },
+      ],
     },
     articles: {
-      badge: "Field Insights & Research",
-      title: "Latest Educational Insights",
-      subtitle: "Written directly by researchers, instructional coaches, and educators at CSI EDU.",
+      eyebrow: "Publications & Research",
+      title: "Educational Insights and Field Guides",
+      subtitle:
+        "Evidence-grounded guides and analyses authored by CSI EDU researchers, instructional coaches, and educators.",
       readMore: "Read Full Article",
-      minRead: "min read",
-      viewAll: "View All Articles",
-    },
-    testimonials: {
-      badge: "Trusted Across Indonesia",
-      title: "Endorsed by Over 450+ Schools and Institutions",
-      subtitle: "Hear directly from principals, classroom teachers, and foundation leaders.",
     },
     ctaSection: {
-      title: "Ready to Transform Learning in Your School?",
+      title: "Consult with Our Educational Advisory Team",
       description:
-        "Speak with CSI EDU education consultants about your school's unique goals. Start with a complimentary assessment review or pilot program.",
-      primaryBtn: "Schedule a Consultation & Demo",
-      secondaryBtn: "Chat via WhatsApp",
+        "Our team is prepared to present the partnership framework, provide sample assessment instruments, and structure an implementation schedule suited to your institution.",
+      btnPrimary: "Schedule a Consultation Session",
+      btnSecondary: "Inquire via WhatsApp",
     },
     modal: {
-      title: "Request Partnership Demo & Consultation",
-      subtitle: "Fill out the quick form below. A CSI EDU education consultant will reach out within 24 business hours.",
-      schoolName: "School / Foundation Name",
-      picName: "Your Full Name",
-      picRole: "Role (Principal / Curriculum Head / Foundation Board)",
-      email: "Official Email",
-      phone: "WhatsApp Number",
-      city: "City / District",
-      interest: "Program Area of Interest",
-      notes: "Current Challenges or Priorities",
-      submit: "Submit Partnership Request",
-      successTitle: "Request Received!",
-      successMessage: "Thank you for reaching out to CSI EDU. Our team will contact your WhatsApp number shortly to coordinate a presentation session.",
-      close: "Close",
+      title: "Request Program Consultation & Presentation",
+      subtitle:
+        "Complete the brief form below. A CSI EDU education consultant will contact you within 24 business hours to confirm an online presentation or campus visit.",
+      schoolLabel: "School or Foundation Name",
+      nameLabel: "Contact Person Full Name",
+      roleLabel: "Role / Position at Institution",
+      phoneLabel: "Active WhatsApp Number",
+      emailLabel: "Official Email Address",
+      cityLabel: "City / Regency",
+      interestLabel: "Areas of Interest",
+      notesLabel: "Current Academic Priorities or Challenges",
+      submitBtn: "Submit Consultation Request",
+      successTitle: "Your Request Has Been Received",
+      successDesc:
+        "Thank you for contacting CSI EDU. Our advisory team will reach out to your WhatsApp number within 1 business day to coordinate the presentation schedule.",
     },
     footer: {
-      tagline:
-        "An integrated educational technology and coaching ecosystem advancing teacher mastery, student literacy, and school quality across Indonesia.",
-      office: "Depok & Jakarta, Indonesia",
-      linksProducts: "Products",
-      linksCompany: "Company",
-      linksResources: "Resources",
-      rights: "All rights reserved. CSI EDU — Catalyst for School Improvement.",
+      description:
+        "CSI EDU (Catalyst for School Improvement) is an integrated educational development and technology ecosystem dedicated to school quality improvement, teacher professional mastery, and student reading literacy throughout Indonesia.",
+      address: "Education & Research Complex, Depok & Jakarta, Indonesia",
+      colSolutions: "Partnership Solutions",
+      colPrograms: "Platforms",
+      colCompany: "Institution",
+      copyright: "All rights reserved. CSI EDU — Catalyst for School Improvement.",
     },
   },
 };
