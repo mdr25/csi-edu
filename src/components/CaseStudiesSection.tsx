@@ -9,14 +9,41 @@ export default function CaseStudiesSection() {
   const { t } = useLanguage();
 
   const institutionalPartners = [
-    "Dinas Pendidikan Kota Surabaya",
-    "Ikatan Guru Indonesia (IGI)",
-    "Universitas Pendidikan Indonesia (UPI)",
-    "Yayasan Pendidikan Nusantara",
-    "Jaringan Sekolah Islam Terpadu",
-    "SMA Santo Yosef Medan",
-    "SMP Negeri 2 Bandung",
-    "SD Islam Terpadu Al-Hikmah",
+    {
+      name: "Dinas Pendidikan Kota Surabaya",
+      short: "Disdik Surabaya",
+      logo: "/img/logo/logo-dinas-pendidikan-surabaya.png",
+    },
+    {
+      name: "Ikatan Guru Indonesia (IGI)",
+      short: "Ikatan Guru Indonesia",
+      logo: "/img/logo/logo-igi.png",
+    },
+    {
+      name: "Universitas Pendidikan Indonesia (UPI)",
+      short: "UPI Bandung",
+      logo: "/img/logo/upi.png",
+    },
+    {
+      name: "Jaringan Sekolah Islam Terpadu (JSIT)",
+      short: "JSIT Indonesia",
+      logo: "/img/logo/jsit.png",
+    },
+    {
+      name: "SMP Negeri 2 Bandung",
+      short: "SMPN 2 Bandung",
+      logo: "/img/logo/logo-smp-2-bandung.png",
+    },
+    {
+      name: "SMA Santo Yoseph Medan",
+      short: "SMA Santo Yoseph",
+      logo: "/img/logo/logo-sma-santo-yoseph.png",
+    },
+    {
+      name: "SD Islam Terpadu Al-Hikmah",
+      short: "SDIT Al-Hikmah",
+      logo: "/img/logo/logo-sdit-al-hikmah.png",
+    },
   ];
 
   return (
@@ -35,19 +62,36 @@ export default function CaseStudiesSection() {
           </p>
         </div>
 
-        {/* Institutional Partner Name Bar */}
-        <div className="mt-10 py-5 px-6 bg-slate-50 rounded-xl border border-slate-200">
-          <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3 text-center sm:text-left">
-            Institusi & Jaringan Sekolah yang Telah Berkolaborasi
+        {/* Institutional Partner Logo Grid */}
+        <div className="mt-10 p-5 sm:p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <div className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-5 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Building className="w-3.5 h-3.5 text-csi-teal-700" />
+              <span>Institusi & Jaringan Sekolah Mitra Kolaborasi</span>
+            </div>
+            <span className="hidden sm:inline text-[11px] font-medium text-slate-400">
+              Tersebar di Jawa, Sumatera, & Berbagai Wilayah Indonesia
+            </span>
           </div>
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-            {institutionalPartners.map((name, i) => (
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 items-center">
+            {institutionalPartners.map((partner, i) => (
               <div
                 key={i}
-                className="px-3 py-1.5 rounded bg-white border border-slate-200 text-xs font-semibold text-slate-700 flex items-center gap-1.5"
+                className="bg-white p-3 rounded-xl border border-slate-200/80 shadow-2xs hover:shadow-sm hover:border-teal-400/60 transition-all flex flex-col items-center justify-center text-center group h-24 sm:h-28"
+                title={partner.name}
               >
-                <Building className="w-3 h-3 text-navy-800" />
-                <span>{name}</span>
+                <div className="relative h-10 sm:h-12 w-full max-w-[85px] mb-1.5 flex items-center justify-center">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                  />
+                </div>
+                <span className="text-[10px] sm:text-[11px] font-bold text-slate-600 line-clamp-1 group-hover:text-navy-950 transition-colors">
+                  {partner.short}
+                </span>
               </div>
             ))}
           </div>

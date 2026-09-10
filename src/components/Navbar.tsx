@@ -83,7 +83,7 @@ export default function Navbar() {
             <a href="#" className="flex items-center gap-3.5 group shrink-0">
               <div className="relative h-10 w-40 sm:w-48 transition-transform group-hover:scale-[1.02]">
                 <Image
-                  src="/img/logo-csi.png"
+                  src="/img/logo/logo-csi.png"
                   alt="Catalyst for School Improvement - CSI EDU"
                   fill
                   priority

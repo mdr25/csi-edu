@@ -22,7 +22,7 @@ export default function Footer() {
               <div className="bg-white p-2.5 rounded-xl inline-flex items-center shadow-xs border border-slate-700/50">
                 <div className="relative h-9 w-44">
                   <Image
-                    src="/img/logo-csi.png"
+                    src="/img/logo/logo-csi.png"
                     alt="Catalyst for School Improvement"
                     fill
                     className="object-contain"
