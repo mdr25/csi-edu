@@ -80,8 +80,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Corporate Brand Identity */}
-            <a href="#" className="flex items-center gap-3.5 group">
-              <div className="relative h-10 w-44 sm:w-52 transition-transform group-hover:scale-[1.02]">
+            <a href="#" className="flex items-center gap-3.5 group shrink-0">
+              <div className="relative h-10 w-40 sm:w-48 transition-transform group-hover:scale-[1.02]">
                 <Image
                   src="/img/logo-csi.png"
                   alt="Catalyst for School Improvement - CSI EDU"
@@ -93,66 +93,66 @@ export default function Navbar() {
             </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center gap-6 text-sm font-medium text-slate-700">
+            <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 text-xs 2xl:text-sm font-semibold text-slate-700">
               <a
                 href="#solutions"
-                className="hover:text-navy-900 hover:font-semibold transition-colors"
+                className="hover:text-navy-900 transition-colors whitespace-nowrap"
               >
                 {t.nav.solutions}
               </a>
               <a
                 href="#expert"
-                className="hover:text-navy-900 hover:font-semibold transition-colors"
+                className="hover:text-navy-900 transition-colors whitespace-nowrap"
               >
                 {t.nav.leadership}
               </a>
               <a
                 href="#learning-brewing"
-                className="hover:text-navy-900 hover:font-semibold transition-colors flex items-center gap-1.5 text-amber-700 font-semibold"
+                className="hover:text-navy-900 transition-colors whitespace-nowrap flex items-center gap-1.5 text-amber-800 font-bold bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200 shadow-2xs"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                {t.nav.learningBrewing}
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse shrink-0" />
+                <span>{t.nav.learningBrewing}</span>
               </a>
               <a
                 href="#products"
-                className="hover:text-navy-900 hover:font-semibold transition-colors"
+                className="hover:text-navy-900 transition-colors whitespace-nowrap"
               >
                 {t.nav.products}
               </a>
               <a
                 href="#methodology"
-                className="hover:text-navy-900 hover:font-semibold transition-colors"
+                className="hover:text-navy-900 transition-colors whitespace-nowrap"
               >
                 {t.nav.methodology}
               </a>
               <a
                 href="#planner"
-                className="text-navy-900 font-bold hover:text-navy-700 transition-colors"
+                className="hover:text-navy-900 transition-colors whitespace-nowrap"
               >
                 {t.nav.planner}
               </a>
               <a
                 href="#case-studies"
-                className="hover:text-navy-900 hover:font-semibold transition-colors"
+                className="hover:text-navy-900 transition-colors whitespace-nowrap"
               >
                 {t.nav.caseStudies}
               </a>
               <a
                 href="#articles"
-                className="hover:text-navy-900 hover:font-semibold transition-colors"
+                className="hover:text-navy-900 transition-colors whitespace-nowrap"
               >
                 {t.nav.articles}
               </a>
             </nav>
 
             {/* Right Action */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden xl:flex items-center gap-4 shrink-0">
               <button
                 onClick={openModal}
-                className="px-5 py-2.5 rounded-lg bg-navy-900 hover:bg-navy-800 text-white text-xs sm:text-sm font-bold tracking-wide transition-colors shadow-xs flex items-center gap-2"
+                className="px-4 2xl:px-5 py-2.5 rounded-lg bg-navy-900 hover:bg-navy-800 text-white text-xs 2xl:text-sm font-bold tracking-wide transition-colors shadow-xs flex items-center gap-2 whitespace-nowrap"
               >
                 <span>{t.nav.contactBtn}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 shrink-0" />
               </button>
             </div>
 
