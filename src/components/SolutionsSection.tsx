@@ -2,20 +2,20 @@
 
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { ArrowRight, Check, FileText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function SolutionsSection() {
   const { t, openModal } = useLanguage();
 
   return (
-    <section id="solutions" className="py-20 sm:py-24 bg-white border-b border-slate-200">
+    <section id="solutions" className="py-24 sm:py-32 bg-slate-50/50 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 text-xs font-bold uppercase tracking-wider">
+        <div className="max-w-3xl space-y-4">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-teal-800">
             <span>{t.solutions.eyebrow}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight">
             {t.solutions.title}
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
@@ -23,47 +23,44 @@ export default function SolutionsSection() {
           </p>
         </div>
 
-        {/* 2x2 Corporate Solutions Grid (Clean, Dignified, No generic icon spam) */}
-        <div className="mt-14 grid md:grid-cols-2 gap-8">
+        {/* Open, Borderless 2x2 Editorial Layout (No card boxes, no borders) */}
+        <div className="mt-16 grid md:grid-cols-2 gap-x-16 gap-y-16">
           {t.solutions.items.map((item, idx) => (
             <div
               key={item.id}
-              className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-teal-950/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              className="pt-6 border-t border-slate-200/80 flex flex-col justify-between space-y-6"
             >
               <div className="space-y-4">
-                {/* Header item */}
-                <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-                  <span className="w-8 h-8 rounded-xl bg-teal-50 text-teal-800 font-extrabold text-xs flex items-center justify-center border border-teal-100/80">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold text-slate-400">
                     0{idx + 1}
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200/80">
+                  <span className="text-xs font-semibold tracking-wide text-amber-800">
                     {item.subtitle}
                   </span>
                 </div>
 
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1.5">
+                  <h3 className="text-2xl font-bold text-slate-950 tracking-tight">
                     {item.title}
                   </h3>
-                  <div className="text-xs font-medium text-slate-500 mb-3">
+                  <div className="text-xs text-teal-800 font-medium mt-1">
                     {item.target}
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed mt-3">
                     {item.description}
                   </p>
                 </div>
 
-                {/* Deliverables Checklist */}
-                <div className="space-y-2 pt-2">
-                  <div className="text-xs font-bold uppercase tracking-wider text-slate-700">
-                    Komponen & Luaran Program:
+                {/* Minimalist Deliverables List - No checkmark icon spam */}
+                <div className="pt-2 space-y-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                    Komponen Program:
                   </div>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700">
                     {item.deliverables.map((del, dIdx) => (
-                      <li key={dIdx} className="flex items-start gap-2.5 text-xs text-slate-700">
-                        <span className="w-4 h-4 rounded-full bg-navy-100 text-navy-900 flex items-center justify-center shrink-0 mt-0.5 font-bold">
-                          <Check className="w-2.5 h-2.5 stroke-[3]" />
-                        </span>
+                      <li key={dIdx} className="flex items-start gap-2.5">
+                        <span className="text-teal-700 font-bold select-none">—</span>
                         <span>{del}</span>
                       </li>
                     ))}
@@ -71,15 +68,15 @@ export default function SolutionsSection() {
                 </div>
               </div>
 
-              {/* Action */}
-              <div className="mt-8 pt-4 border-t border-slate-200 flex items-center justify-between">
+              {/* Minimal Clean Action Link */}
+              <div className="pt-4">
                 <button
                   type="button"
                   onClick={openModal}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-navy-900 hover:text-navy-700 transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-teal-800 hover:text-teal-950 transition-colors group"
                 >
                   <span>Konsultasikan Program Ini</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>
             </div>
