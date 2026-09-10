@@ -1,5 +1,6 @@
 {
-  "name": "csi-edu-redesign",
+  "name": "csi-edu",
+  "description": "CSI EDU (Catalyst for School Improvement) — Modern Ecosystem Platform for Teacher Development & Student Literacy Acceleration",
   "version": "0.1.0",
   "private": true,
   "scripts": {
