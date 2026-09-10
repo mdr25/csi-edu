@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
-import { Building, Quote, CheckCircle2 } from "lucide-react";
+import { Building, Quote, CheckCircle2, Camera } from "lucide-react";
 
 export default function CaseStudiesSection() {
   const { t } = useLanguage();
@@ -87,6 +88,92 @@ export default function CaseStudiesSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Authentic Field Gallery Grid */}
+        <div className="mt-16 pt-12 border-t border-slate-200">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-csi-teal-700 bg-teal-50 px-2.5 py-1 rounded border border-teal-200">
+                <Camera className="w-3.5 h-3.5" />
+                <span>Dokumentasi Pelatihan Lapangan</span>
+              </div>
+              <h3 className="text-2xl font-serif font-bold text-navy-950 mt-2">
+                Aktivitas Nyata Pendampingan di Satuan Pendidikan Mitra
+              </h3>
+            </div>
+            <p className="text-xs text-slate-500 max-w-md">
+              Fasilitasi langsung oleh instruktur senior CSI EDU bersama para kepala sekolah, guru, dan tim kurikulum di berbagai kota.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="group rounded-xl overflow-hidden border border-slate-200 bg-white shadow-xs hover:shadow-md transition-shadow">
+              <div className="relative h-56 w-full bg-slate-100">
+                <Image
+                  src="/img/workshop-leadership.jpeg"
+                  alt="Sesi Kepemimpinan & Produktivitas Organisasi"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-amber-600">
+                  Leadership & Productivity
+                </div>
+                <div className="font-serif font-bold text-navy-950 text-sm mt-1">
+                  Dampak Kepemimpinan terhadap Produktivitas Satuan Pendidikan
+                </div>
+                <div className="text-xs text-slate-500 mt-1">
+                  Sesi paparan interaktif bagi pimpinan sekolah dan yayasan
+                </div>
+              </div>
+            </div>
+
+            <div className="group rounded-xl overflow-hidden border border-slate-200 bg-white shadow-xs hover:shadow-md transition-shadow">
+              <div className="relative h-56 w-full bg-slate-100">
+                <Image
+                  src="/img/workshop-discussion.jpeg"
+                  alt="Forum Diskusi Reflektif Pimpinan Sekolah"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-csi-teal-700">
+                  Reflektif & Evaluatif
+                </div>
+                <div className="font-serif font-bold text-navy-950 text-sm mt-1">
+                  Check Point Kepemimpinan: Mengatasi Hambatan Pertumbuhan Sekolah
+                </div>
+                <div className="text-xs text-slate-500 mt-1">
+                  Bedah kasus perilaku manajemen dan iklim kerja guru di sekolah
+                </div>
+              </div>
+            </div>
+
+            <div className="group rounded-xl overflow-hidden border border-slate-200 bg-white shadow-xs hover:shadow-md transition-shadow">
+              <div className="relative h-56 w-full bg-slate-100">
+                <Image
+                  src="/img/workshop-session.jpeg"
+                  alt="Penerapan Islamic Leadership di Sekolah"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-4">
+                <div className="text-[10px] font-bold uppercase tracking-wider text-csi-orange">
+                  Masterclass
+                </div>
+                <div className="font-serif font-bold text-navy-950 text-sm mt-1">
+                  Islamic Educational Leadership & 5 Levels of Leadership
+                </div>
+                <div className="text-xs text-slate-500 mt-1">
+                  Pemetaan kompetensi dan peran transformatif kepala sekolah
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { Phone, Mail, Globe, Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 
@@ -80,31 +81,37 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Corporate Brand Identity */}
             <a href="#" className="flex items-center gap-3.5 group">
-              <div className="w-10 h-10 rounded-lg bg-navy-900 flex items-center justify-center text-white border border-navy-800 shadow-xs group-hover:bg-navy-800 transition-colors">
-                <span className="font-serif font-black text-xl text-amber-400">C</span>
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="font-serif font-black text-xl text-navy-900 tracking-tight">
-                    CSI EDU
-                  </span>
-                  <span className="text-[11px] font-sans font-bold uppercase tracking-widest text-slate-500">
-                    Indonesia
-                  </span>
-                </div>
-                <span className="text-[11px] text-slate-500 font-medium tracking-wide">
-                  Catalyst for School Improvement
-                </span>
+              <div className="relative h-10 w-44 sm:w-52 transition-transform group-hover:scale-[1.02]">
+                <Image
+                  src="/img/logo-csi.png"
+                  alt="Catalyst for School Improvement - CSI EDU"
+                  fill
+                  priority
+                  className="object-contain object-left"
+                />
               </div>
             </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden xl:flex items-center gap-7 text-sm font-medium text-slate-700">
+            <nav className="hidden xl:flex items-center gap-6 text-sm font-medium text-slate-700">
               <a
                 href="#solutions"
                 className="hover:text-navy-900 hover:font-semibold transition-colors"
               >
                 {t.nav.solutions}
+              </a>
+              <a
+                href="#expert"
+                className="hover:text-navy-900 hover:font-semibold transition-colors"
+              >
+                {t.nav.leadership}
+              </a>
+              <a
+                href="#learning-brewing"
+                className="hover:text-navy-900 hover:font-semibold transition-colors flex items-center gap-1.5 text-amber-700 font-semibold"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                {t.nav.learningBrewing}
               </a>
               <a
                 href="#products"
@@ -179,6 +186,20 @@ export default function Navbar() {
               className="px-3 py-2 rounded hover:bg-slate-50"
             >
               {t.nav.solutions}
+            </a>
+            <a
+              href="#expert"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 rounded hover:bg-slate-50"
+            >
+              {t.nav.leadership}
+            </a>
+            <a
+              href="#learning-brewing"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 rounded hover:bg-slate-50 text-amber-800 font-bold"
+            >
+              {t.nav.learningBrewing}
             </a>
             <a
               href="#products"

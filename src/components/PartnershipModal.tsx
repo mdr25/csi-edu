@@ -70,13 +70,23 @@ export default function PartnershipModal() {
               <div>• <strong>Kota:</strong> {formData.city || "-"}</div>
             </div>
 
-            <button
-              type="button"
-              onClick={handleReset}
-              className="w-full py-3 rounded-lg bg-navy-900 hover:bg-navy-800 text-white font-bold text-sm transition-colors"
-            >
-              Selesai & Tutup
-            </button>
+            <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
+              <a
+                href={`https://wa.me/6285695042915?text=Halo%20CSI%20EDU,%20saya%20sudah%20mengisi%20formulir%20konsultasi%20atas%20nama%20${encodeURIComponent(formData.picName || "Mitra")}%20dari%20${encodeURIComponent(formData.schoolName || "Sekolah")}.`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 py-3 px-4 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm transition-colors text-center inline-flex items-center justify-center gap-2 shadow-xs"
+              >
+                <span>Konfirmasi via WhatsApp</span>
+              </a>
+              <button
+                type="button"
+                onClick={handleReset}
+                className="py-3 px-5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-colors"
+              >
+                Tutup
+              </button>
+            </div>
           </div>
         ) : (
           /* Formal Form */

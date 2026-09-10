@@ -8,6 +8,8 @@ export interface TranslationData {
   };
   nav: {
     solutions: string;
+    leadership: string;
+    learningBrewing: string;
     products: string;
     methodology: string;
     planner: string;
@@ -41,6 +43,39 @@ export interface TranslationData {
       deliverables: string[];
       linkText: string;
     }>;
+  };
+  leadership: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    expertBadge: string;
+    expertName: string;
+    expertRole: string;
+    expertBio: string;
+    expertPoints: string[];
+    expertQuote: string;
+    associateTitle: string;
+    associateName: string;
+    associateRole: string;
+    associateBio: string;
+    consultationCta: string;
+  };
+  learningBrewing: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    venueTag: string;
+    venueLocation: string;
+    sessions: Array<{
+      category: string;
+      title: string;
+      speaker: string;
+      focus: string;
+      badge: string;
+      dateOrStatus: string;
+    }>;
+    registerCta: string;
+    whatsappCta: string;
   };
   methodology: {
     eyebrow: string;
@@ -146,12 +181,14 @@ export interface TranslationData {
 export const translations: Record<Language, TranslationData> = {
   id: {
     topBar: {
-      tagline: "Ekosistem Peningkatan Mutu Satuan Pendidikan di Indonesia",
+      tagline: "Catalyst for School Improvement • Ekosistem Mutu Sekolah & Guru",
       contact: "Konsultasi Kemitraan Sekolah",
-      phone: "+62 21 5050 1234",
+      phone: "+62 856 9504 2915",
     },
     nav: {
       solutions: "Solusi Kemitraan",
+      leadership: "Dewan Pakar",
+      learningBrewing: "Learning & Brewing",
       products: "Platform Produk",
       methodology: "Metodologi",
       planner: "Perencanaan Program",
@@ -256,6 +293,67 @@ export const translations: Record<Language, TranslationData> = {
           linkText: "Konsultasi Tata Kelola Mutu",
         },
       ],
+    },
+    leadership: {
+      eyebrow: "Kepemimpinan & Dewan Pakar",
+      title: "Dipimpin oleh Praktisi dan Akademisi Transformasi Sekolah",
+      subtitle:
+        "Kemitraan CSI EDU dirancang dan dipandu langsung oleh pakar berpengalaman yang memahami dinamika nyata di sekolah, manajemen kurikulum, dan tata kelola yayasan.",
+      expertBadge: "Lead School Transformation Expert & Founder",
+      expertName: "Dr. Rahmat Syehani",
+      expertRole: "School Transformation Expert & Inisiator Ekosistem CSI EDU",
+      expertBio:
+        "Telah lebih dari dua dekade mendedikasikan kepakarannya dalam memfasilitasi transformasi mutu pendidikan dasar dan menengah di Indonesia. Aktif memimpin riset integrasi Kurikulum Merdeka, perancangan model kepemimpinan sekolah, serta pembinaan ribuan kepala sekolah dan pendidik di berbagai kota.",
+      expertPoints: [
+        "Kolaborasi riset kurikulum dan mutu pendidikan bersama universitas terkemuka (seperti UPI)",
+        "Spesialisasi dalam Islamic Educational Leadership, 5 Levels of Leadership, dan The Law of Process",
+        "Arsitek ekosistem terpadu CSI Academy, NF Testing Center, dan School Reading System (SRS)",
+        "Fasilitator utama forum eksekutif kepemimpinan sekolah 'Learning & Brewing'",
+      ],
+      expertQuote:
+        "Sekolah tidak akan pernah bertumbuh melampaui kapasitas kepemimpinannya. Perubahan mutu yang hakiki berakar saat kepala sekolah dan guru berkomitmen menjadi pembelajar sejati di ruang kelas.",
+      associateTitle: "Mitra Ahli Manajemen & Risiko Hukum",
+      associateName: "Achmad Fatoni, S.E., SH",
+      associateRole: "Associate of CSI — Educational Legal & Risk Management",
+      associateBio:
+        "Mendampingi yayasan dan manajemen sekolah dalam memetakan titik rawan risiko hukum, kepatuhan ketenagakerjaan pendidik, serta tata kelola kelembagaan pendidikan yang aman dan berkelanjutan.",
+      consultationCta: "Undang Paparan Dewan Pakar",
+    },
+    learningBrewing: {
+      eyebrow: "Forum Eksekutif Pimpinan Sekolah",
+      title: "Learning & Brewing: Ruang Diskusi Strategis Transformasi Sekolah",
+      subtitle:
+        "Forum diskusi santai namun mendalam (open for educators & school leaders) untuk membedah tantangan tata kelola, kepemimpinan adaptif, dan mitigasi risiko sekolah bersama para pakar.",
+      venueTag: "Lokasi Training & Workshop",
+      venueLocation: "Training Center CSI, Grand Depok City, Kota Depok, Jawa Barat",
+      sessions: [
+        {
+          category: "Tata Kelola & Hukum",
+          title: "Urgensi Legal Awareness & Pemetaan Titik Rawan Risiko Hukum Sekolah",
+          speaker: "Dr. Rahmat Syehani & Achmad Fatoni, S.E., SH",
+          focus: "Membangun kesadaran bahwa hukum bukan beban melainkan pelindung institusi sekolah, pencegahan sengketa, dan tata kelola SDM yayasan.",
+          badge: "Diskusi Terbuka",
+          dateOrStatus: "Grand Depok City • Sesi Berkala",
+        },
+        {
+          category: "Kepemimpinan Transformasional",
+          title: "Transforming School: Leadership for a Culture of Thinking & Problem Solving",
+          speaker: "Dr. Rahmat Syehani",
+          focus: "Membangun budaya berpikir kritis bagi generasi masa depan melalui pergeseran paradigma kepemimpinan kepala sekolah di ruang kelas.",
+          badge: "Workshop Eksekutif",
+          dateOrStatus: "Grand Depok City • Batch Khusus",
+        },
+        {
+          category: "Pengembangan Kapasitas Pimpinan",
+          title: "The Law of Process & 5 Levels of Educational Leadership",
+          speaker: "Dr. Rahmat Syehani",
+          focus: "Refleksi dan evaluasi posisi level kepemimpinan kepala sekolah untuk mengatasi kejenuhan manajemen dan mengakselerasi produktivitas guru.",
+          badge: "Masterclass",
+          dateOrStatus: "Grand Depok City • Kuota Terbatas",
+        },
+      ],
+      registerCta: "Daftar Sesi Diskusi Terdekat",
+      whatsappCta: "Hubungi Koordinator Acara (Firman: 0856-9504-2915)",
     },
     methodology: {
       eyebrow: "Alur Kerja Sama",
@@ -408,7 +506,7 @@ export const translations: Record<Language, TranslationData> = {
     footer: {
       description:
         "CSI EDU (Catalyst for School Improvement) adalah lembaga penyedia ekosistem pendampingan dan teknologi pendidikan yang berfokus pada transformasi mutu sekolah, kapasitas guru, dan penguatan literasi membaca siswa di Indonesia.",
-      address: "Kompleks Pendidikan & Riset, Depok & Jakarta, Indonesia",
+      address: "Training Center CSI, Grand Depok City, Sektor Anggrek, Kota Depok, Jawa Barat 16412",
       colSolutions: "Solusi Kemitraan",
       colPrograms: "Platform Produk",
       colCompany: "Lembaga",
@@ -417,12 +515,14 @@ export const translations: Record<Language, TranslationData> = {
   },
   en: {
     topBar: {
-      tagline: "Educational Ecosystem for School Improvement in Indonesia",
+      tagline: "Catalyst for School Improvement • School Quality & Teacher Ecosystem",
       contact: "School Partnership Consultation",
-      phone: "+62 21 5050 1234",
+      phone: "+62 856 9504 2915",
     },
     nav: {
       solutions: "Partnership Solutions",
+      leadership: "Expert Council",
+      learningBrewing: "Learning & Brewing",
       products: "Platforms",
       methodology: "Methodology",
       planner: "Program Planner",
@@ -527,6 +627,67 @@ export const translations: Record<Language, TranslationData> = {
           linkText: "Quality Governance Advisory",
         },
       ],
+    },
+    leadership: {
+      eyebrow: "Leadership & Expert Council",
+      title: "Guided by Seasoned Practitioners & Educational Transformation Scholars",
+      subtitle:
+        "CSI EDU partnerships are engineered and facilitated by senior experts with decades of classroom-tested experience in instructional leadership, curriculum reform, and institutional governance.",
+      expertBadge: "Lead School Transformation Expert & Founder",
+      expertName: "Dr. Rahmat Syehani",
+      expertRole: "School Transformation Expert & CSI EDU Ecosystem Architect",
+      expertBio:
+        "For over two decades, Dr. Rahmat has spearheaded school turnaround, Kurikulum Merdeka integration, and instructional leadership programs across hundreds of primary and secondary schools in Indonesia. Regularly collaborates with university researchers (including UPI) and national educator associations.",
+      expertPoints: [
+        "Collaborative educational quality and curriculum research alongside premier universities (e.g. UPI)",
+        "Specialization in Islamic Educational Leadership, 5 Levels of Leadership, and The Law of Process",
+        "Chief architect of the CSI Academy, NF Testing Center, and School Reading System (SRS) ecosystem",
+        "Lead moderator and keynote speaker for the 'Learning & Brewing' school executive discussion forum",
+      ],
+      expertQuote:
+        "A school cannot grow beyond the capacity of its leadership. Real transformation takes root when principals and teachers commit to being authentic, lifelong learners in the classroom.",
+      associateTitle: "Legal & Institutional Risk Management Associate",
+      associateName: "Achmad Fatoni, S.E., SH",
+      associateRole: "Associate of CSI — Educational Legal & Risk Management",
+      associateBio:
+        "Advising governing foundation boards and school executives on legal vulnerability mapping, educator labor law compliance, and dispute-free institutional governance.",
+      consultationCta: "Invite Expert Council Presentation",
+    },
+    learningBrewing: {
+      eyebrow: "School Executive Discussion Series",
+      title: "Learning & Brewing: Strategic Forums for School Leaders & Educators",
+      subtitle:
+        "An intimate yet high-impact executive gathering to dissect strategic governance challenges, adaptive leadership, and school legal risk mitigation over coffee.",
+      venueTag: "Training Center & Workshop Venue",
+      venueLocation: "CSI Training Center, Grand Depok City, Depok, West Java, Indonesia",
+      sessions: [
+        {
+          category: "Governance & School Law",
+          title: "School Legal Awareness & Institutional Risk Mapping",
+          speaker: "Dr. Rahmat Syehani & Achmad Fatoni, S.E., SH",
+          focus: "Reframing education law as an institutional safeguard rather than an administrative burden; preventing foundation disputes and employment liabilities.",
+          badge: "Open Forum",
+          dateOrStatus: "Grand Depok City • Recurring Series",
+        },
+        {
+          category: "Transformational Leadership",
+          title: "Transforming School: Leadership for a Culture of Thinking & Problem Solving",
+          speaker: "Dr. Rahmat Syehani",
+          focus: "Instilling critical thinking across schools by shifting the instructional leadership paradigm of principals and senior educators.",
+          badge: "Executive Workshop",
+          dateOrStatus: "Grand Depok City • Dedicated Cohort",
+        },
+        {
+          category: "Executive Capacity Building",
+          title: "The Law of Process & 5 Levels of Educational Leadership",
+          speaker: "Dr. Rahmat Syehani",
+          focus: "Evaluating personal and institutional leadership tiers to overcome administrative stagnation and accelerate educator productivity.",
+          badge: "Masterclass",
+          dateOrStatus: "Grand Depok City • Limited Seats",
+        },
+      ],
+      registerCta: "Register for Upcoming Session",
+      whatsappCta: "Contact Event Coordinator (Firman: +62 856-9504-2915)",
     },
     methodology: {
       eyebrow: "Partnership Framework",
@@ -679,7 +840,7 @@ export const translations: Record<Language, TranslationData> = {
     footer: {
       description:
         "CSI EDU (Catalyst for School Improvement) is an integrated educational development and technology ecosystem dedicated to school quality improvement, teacher professional mastery, and student reading literacy throughout Indonesia.",
-      address: "Education & Research Complex, Depok & Jakarta, Indonesia",
+      address: "CSI Training Center, Grand Depok City, Depok, West Java 16412, Indonesia",
       colSolutions: "Partnership Solutions",
       colPrograms: "Platforms",
       colCompany: "Institution",

@@ -70,19 +70,19 @@ export default function Hero() {
               {/* Primary High-Resolution Photo (Classroom / Educational Context) */}
               <div className="relative h-72 sm:h-80 w-full bg-slate-200">
                 <Image
-                  src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80"
-                  alt="Guru dan siswa dalam pendampingan kelas CSI EDU"
+                  src="/img/workshop-hero.jpeg"
+                  alt="Dokumentasi Pelatihan & Transformasi Mutu Sekolah CSI EDU"
                   fill
                   priority
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-600 px-2 py-0.5 rounded text-white">
-                    Dokumentasi Kemitraan
+                  <span className="text-[10px] font-bold uppercase tracking-wider bg-csi-orange px-2 py-0.5 rounded text-white shadow-xs">
+                    Dokumentasi Lapangan
                   </span>
-                  <div className="text-sm font-bold mt-1">
-                    Pendampingan Pembelajaran Terdiferensiasi di Sekolah Mitra
+                  <div className="text-sm font-bold mt-1 leading-snug text-white drop-shadow-sm">
+                    Workshop Kepemimpinan & Transformasi Mutu Sekolah Mitra
                   </div>
                 </div>
               </div>

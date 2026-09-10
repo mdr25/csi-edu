@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import SolutionsSection from "@/components/SolutionsSection";
+import LeadershipSection from "@/components/LeadershipSection";
+import LearningBrewingSection from "@/components/LearningBrewingSection";
 import MethodologySection from "@/components/MethodologySection";
 import ProductSection from "@/components/ProductSection";
 import ProgramPlanner from "@/components/ProgramPlanner";
@@ -17,6 +19,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SolutionsSection />
+      <LeadershipSection />
+      <LearningBrewingSection />
       <MethodologySection />
       <ProductSection />
       <ProgramPlanner />

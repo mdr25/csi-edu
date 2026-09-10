@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { Mail, Phone, MapPin, ExternalLink, ArrowUp } from "lucide-react";
 
@@ -17,17 +18,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-navy-900">
           {/* Col 1: Institutional Identity (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-navy-900 border border-navy-800 flex items-center justify-center text-white">
-                <span className="font-serif font-black text-lg text-amber-400">C</span>
-              </div>
-              <div>
-                <span className="font-serif font-bold text-lg text-white">
-                  CSI EDU
-                </span>
-                <div className="text-[10px] uppercase tracking-wider text-slate-400">
-                  Catalyst for School Improvement
+            <div className="space-y-3">
+              <div className="bg-white p-2.5 rounded-xl inline-flex items-center shadow-xs border border-slate-700/50">
+                <div className="relative h-9 w-44">
+                  <Image
+                    src="/img/logo-csi.png"
+                    alt="Catalyst for School Improvement"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
+              </div>
+              <div className="text-[11px] uppercase tracking-wider text-teal-300 font-semibold">
+                Catalyst for School Improvement
               </div>
             </div>
 
@@ -42,13 +45,18 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                <a href="mailto:hello@csi-edu.id" className="hover:text-white">
-                  hello@csi-edu.id
+                <a href="mailto:kemitraan@csi-edu.id" className="hover:text-white">
+                  kemitraan@csi-edu.id / hello@csi-edu.id
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                <span>+62 21 5050 1234 / +62 812 3456 7890</span>
+                <a href="https://wa.me/6285695042915" target="_blank" rel="noreferrer" className="hover:text-white">
+                  +62 856 9504 2915 (Hotline Kemitraan)
+                </a>
+              </div>
+              <div className="text-slate-400 pt-1">
+                Instagram: <a href="https://instagram.com/csi.education" target="_blank" rel="noreferrer" className="text-amber-400 hover:underline">@csi.education</a>
               </div>
             </div>
           </div>
@@ -129,6 +137,16 @@ export default function Footer() {
               {t.footer.colCompany}
             </h4>
             <ul className="space-y-2 text-slate-400">
+              <li>
+                <a href="#expert" className="hover:text-white transition-colors">
+                  Dewan Pakar
+                </a>
+              </li>
+              <li>
+                <a href="#learning-brewing" className="hover:text-white transition-colors text-amber-300">
+                  Learning & Brewing
+                </a>
+              </li>
               <li>
                 <a href="#methodology" className="hover:text-white transition-colors">
                   Metodologi Kemitraan
