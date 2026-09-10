@@ -186,6 +186,72 @@ export default function Hero() {
             </div>
           </div>
         </div>
+
+        {/* Institutional Partners Logo Strip (Immediately visible on Hero) */}
+        <div className="mt-12 pt-8 border-t border-slate-200/80">
+          <div className="text-center sm:text-left mb-4">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-slate-500">
+              Dipercaya oleh Dinas Pendidikan, Perguruan Tinggi, dan Jaringan Sekolah Nasional:
+            </span>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 items-center">
+            {[
+              {
+                name: "Dinas Pendidikan Kota Surabaya",
+                short: "Disdik Surabaya",
+                logo: "/img/logo/logo-dinas-pendidikan-surabaya.png",
+              },
+              {
+                name: "Ikatan Guru Indonesia (IGI)",
+                short: "Ikatan Guru Indonesia",
+                logo: "/img/logo/logo-igi.png",
+              },
+              {
+                name: "Universitas Pendidikan Indonesia (UPI)",
+                short: "UPI Bandung",
+                logo: "/img/logo/upi.png",
+              },
+              {
+                name: "Jaringan Sekolah Islam Terpadu (JSIT)",
+                short: "JSIT Indonesia",
+                logo: "/img/logo/jsit.png",
+              },
+              {
+                name: "SMP Negeri 2 Bandung",
+                short: "SMPN 2 Bandung",
+                logo: "/img/logo/logo-smp-2-bandung.png",
+              },
+              {
+                name: "SMA Santo Yoseph Medan",
+                short: "SMA Santo Yoseph",
+                logo: "/img/logo/logo-sma-santo-yoseph.png",
+              },
+              {
+                name: "SD Islam Terpadu Al-Hikmah",
+                short: "SDIT Al-Hikmah",
+                logo: "/img/logo/logo-sdit-al-hikmah.png",
+              },
+            ].map((p, idx) => (
+              <div
+                key={idx}
+                className="h-24 bg-white rounded-xl border border-slate-200 shadow-2xs hover:shadow-xs hover:border-teal-400 p-2.5 flex flex-col items-center justify-center transition-all group"
+                title={p.name}
+              >
+                <div className="relative h-11 w-full max-w-[85px] flex items-center justify-center">
+                  <Image
+                    src={p.logo}
+                    alt={p.name}
+                    fill
+                    className="object-contain group-hover:scale-105 transition-transform duration-200"
+                  />
+                </div>
+                <span className="text-[10px] sm:text-[11px] font-bold text-slate-700 mt-1.5 line-clamp-1 group-hover:text-navy-950 text-center">
+                  {p.short}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

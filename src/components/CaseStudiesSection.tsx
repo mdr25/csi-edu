@@ -86,7 +86,7 @@ export default function CaseStudiesSection() {
                     src={partner.logo}
                     alt={partner.name}
                     fill
-                    className="object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                    className="object-contain group-hover:scale-105 transition-transform duration-200"
                   />
                 </div>
                 <span className="text-[10px] sm:text-[11px] font-bold text-slate-600 line-clamp-1 group-hover:text-navy-950 transition-colors">
