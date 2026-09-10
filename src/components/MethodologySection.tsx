@@ -12,13 +12,13 @@ export default function MethodologySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <div className="text-xs font-bold uppercase tracking-widest text-navy-800">
-            {t.methodology.eyebrow}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 text-xs font-bold uppercase tracking-wider">
+            <span>{t.methodology.eyebrow}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif font-black text-navy-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             {t.methodology.title}
           </h2>
-          <p className="text-base text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {t.methodology.subtitle}
           </p>
         </div>
@@ -28,13 +28,13 @@ export default function MethodologySection() {
           {t.methodology.pillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl p-6 border border-slate-200 shadow-xs flex flex-col justify-between"
+              className="bg-white rounded-3xl p-7 sm:p-8 border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-teal-950/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-3">
-                <div className="text-2xl font-serif font-black text-navy-900 border-b border-slate-100 pb-2">
+                <div className="text-3xl font-extrabold text-teal-800 border-b border-slate-100 pb-3">
                   {pillar.step}
                 </div>
-                <h3 className="text-base font-serif font-bold text-navy-950">
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
                   {pillar.title}
                 </h3>
                 <p className="text-xs text-slate-600 leading-relaxed">
@@ -51,9 +51,9 @@ export default function MethodologySection() {
         </div>
 
         {/* Corporate Trust Banner */}
-        <div className="mt-12 bg-navy-950 rounded-xl p-6 sm:p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-14 bg-gradient-to-r from-teal-950 via-slate-950 to-teal-900 rounded-3xl p-8 sm:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl shadow-teal-950/20">
           <div className="space-y-1 text-center md:text-left">
-            <h4 className="text-lg font-serif font-bold text-white">
+            <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               Ingin Mengetahui Kesiapan Mutu Satuan Pendidikan Anda?
             </h4>
             <p className="text-slate-300 text-xs sm:text-sm">

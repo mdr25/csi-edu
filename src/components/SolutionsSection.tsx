@@ -12,13 +12,13 @@ export default function SolutionsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <div className="text-xs font-bold uppercase tracking-widest text-navy-800">
-            {t.solutions.eyebrow}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 text-xs font-bold uppercase tracking-wider">
+            <span>{t.solutions.eyebrow}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif font-black text-navy-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             {t.solutions.title}
           </h2>
-          <p className="text-base text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {t.solutions.subtitle}
           </p>
         </div>
@@ -28,21 +28,21 @@ export default function SolutionsSection() {
           {t.solutions.items.map((item, idx) => (
             <div
               key={item.id}
-              className="bg-slate-50 rounded-xl p-8 border border-slate-200 hover:border-navy-400 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+              className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-100 shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-teal-950/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-4">
                 {/* Header item */}
-                <div className="flex items-baseline justify-between border-b border-slate-200 pb-3">
-                  <span className="text-xs font-serif font-bold text-slate-400">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                  <span className="w-8 h-8 rounded-xl bg-teal-50 text-teal-800 font-extrabold text-xs flex items-center justify-center border border-teal-100/80">
                     0{idx + 1}
                   </span>
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded border border-amber-200">
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200/80">
                     {item.subtitle}
                   </span>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-serif font-bold text-navy-950 mb-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1.5">
                     {item.title}
                   </h3>
                   <div className="text-xs font-medium text-slate-500 mb-3">

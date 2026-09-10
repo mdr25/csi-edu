@@ -54,7 +54,7 @@ export default function PartnershipModal() {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-2xl font-serif font-bold text-navy-950">
+              <h3 className="text-2xl font-extrabold text-slate-900">
                 {t.modal.successTitle}
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed max-w-md mx-auto">
@@ -95,7 +95,7 @@ export default function PartnershipModal() {
               <div className="text-[11px] font-bold uppercase tracking-wider text-navy-800">
                 Konsultasi Kemitraan Sekolah
               </div>
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-navy-950">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 {t.modal.title}
               </h3>
               <p className="text-xs text-slate-500 leading-relaxed">

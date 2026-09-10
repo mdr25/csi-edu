@@ -60,13 +60,13 @@ export default function ArticlesSection() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-slate-200">
           <div className="max-w-3xl space-y-3">
-            <div className="text-xs font-bold uppercase tracking-widest text-navy-800">
-              {t.articles.eyebrow}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 text-xs font-bold uppercase tracking-wider">
+              <span>{t.articles.eyebrow}</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-black text-navy-950 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
               {t.articles.title}
             </h2>
-            <p className="text-base text-slate-600 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
               {t.articles.subtitle}
             </p>
           </div>
@@ -87,7 +87,7 @@ export default function ArticlesSection() {
           {articlesData.map((art) => (
             <article
               key={art.id}
-              className="bg-white rounded-xl p-6 border border-slate-200 flex flex-col justify-between hover:border-slate-300 hover:shadow-sm transition-all"
+              className="bg-white rounded-3xl p-8 border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-teal-950/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-xs text-slate-500">
@@ -97,7 +97,7 @@ export default function ArticlesSection() {
                   <span>{art.readTime}</span>
                 </div>
 
-                <h3 className="font-serif font-bold text-navy-950 text-base leading-snug">
+                <h3 className="font-bold text-slate-900 text-lg leading-snug">
                   {art.title}
                 </h3>
 

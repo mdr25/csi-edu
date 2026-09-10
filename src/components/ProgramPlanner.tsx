@@ -71,13 +71,13 @@ export default function ProgramPlanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <div className="text-xs font-bold uppercase tracking-widest text-navy-800">
-            {t.planner.eyebrow}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 text-xs font-bold uppercase tracking-wider">
+            <span>{t.planner.eyebrow}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif font-black text-navy-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             {t.planner.title}
           </h2>
-          <p className="text-base text-slate-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {t.planner.subtitle}
           </p>
         </div>
@@ -85,9 +85,9 @@ export default function ProgramPlanner() {
         {/* Planner Layout */}
         <div className="mt-12 grid lg:grid-cols-12 gap-8 items-start">
           {/* Controls (Left 6 cols) */}
-          <div className="lg:col-span-6 bg-white p-6 sm:p-8 rounded-xl border border-slate-300 shadow-xs space-y-6">
-            <div className="border-b border-slate-200 pb-3">
-              <h3 className="text-base font-serif font-bold text-navy-950">
+          <div className="lg:col-span-6 bg-white p-7 sm:p-9 rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 space-y-6">
+            <div className="border-b border-slate-100 pb-4">
+              <h3 className="text-lg font-bold text-slate-900">
                 Profil Satuan Pendidikan Anda
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
@@ -225,7 +225,7 @@ export default function ProgramPlanner() {
               <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400">
                 {t.planner.outputTitle}
               </span>
-              <h3 className="text-xl sm:text-2xl font-serif font-bold text-white mt-1">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
                 {blueprint.name}
               </h3>
               <div className="flex items-center gap-1.5 text-xs text-slate-300 mt-2">
@@ -238,7 +238,7 @@ export default function ProgramPlanner() {
             <div className="grid grid-cols-2 gap-3 text-xs">
               <div className="bg-navy-900/80 p-3.5 rounded-lg border border-navy-800">
                 <div className="text-slate-400 text-[11px]">Target Buku Tuntas Dibaca</div>
-                <div className="text-2xl font-serif font-bold text-white mt-1">
+                <div className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
                   {projectedTotalBooks.toLocaleString("id-ID")}+
                 </div>
                 <div className="text-[10px] text-slate-400 mt-0.5">Buku teruji pemahamannya</div>
@@ -246,7 +246,7 @@ export default function ProgramPlanner() {
 
               <div className="bg-navy-900/80 p-3.5 rounded-lg border border-navy-800">
                 <div className="text-slate-400 text-[11px]">Kesiapan Sertifikasi Guru</div>
-                <div className="text-2xl font-serif font-bold text-emerald-400 mt-1">
+                <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 mt-1">
                   {projectedCertifiedTeachers} Guru
                 </div>
                 <div className="text-[10px] text-slate-400 mt-0.5">Portofolio Kurikulum Merdeka</div>
@@ -254,7 +254,7 @@ export default function ProgramPlanner() {
 
               <div className="bg-navy-900/80 p-3.5 rounded-lg border border-navy-800">
                 <div className="text-slate-400 text-[11px]">Proyeksi Kenaikan ANBK</div>
-                <div className="text-2xl font-serif font-bold text-amber-400 mt-1">
+                <div className="text-2xl sm:text-3xl font-extrabold text-amber-400 mt-1">
                   {projectedANBKGain}
                 </div>
                 <div className="text-[10px] text-slate-400 mt-0.5">Indeks Rapor Pendidikan</div>
@@ -262,7 +262,7 @@ export default function ProgramPlanner() {
 
               <div className="bg-navy-900/80 p-3.5 rounded-lg border border-navy-800">
                 <div className="text-slate-400 text-[11px]">Fasilitator Pendamping</div>
-                <div className="text-2xl font-serif font-bold text-white mt-1">
+                <div className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
                   Dedicated
                 </div>
                 <div className="text-[10px] text-slate-400 mt-0.5">Monitoring mingguan</div>

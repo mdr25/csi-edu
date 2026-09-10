@@ -17,7 +17,7 @@ export default function LeadershipSection() {
             <Award className="w-3.5 h-3.5" />
             <span>{t.leadership.eyebrow}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-serif font-black text-navy-950 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
             {t.leadership.title}
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
@@ -26,7 +26,7 @@ export default function LeadershipSection() {
         </div>
 
         {/* Lead Expert Card: Dr. Rahmat Syehani */}
-        <div className="mt-12 bg-gradient-to-br from-slate-900 via-navy-950 to-teal-950 rounded-2xl border border-slate-800 shadow-xl overflow-hidden text-white">
+        <div className="mt-12 bg-gradient-to-br from-teal-950 via-slate-950 to-teal-900 rounded-3xl border border-teal-900/60 shadow-2xl shadow-teal-950/20 overflow-hidden text-white">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center p-6 sm:p-10 lg:p-12">
             {/* Portrait Column (5 cols) */}
             <div className="lg:col-span-5 flex flex-col items-center">
@@ -40,7 +40,7 @@ export default function LeadershipSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 text-center">
-                  <div className="text-lg font-serif font-bold text-white tracking-wide">
+                  <div className="text-lg font-bold text-white tracking-wide">
                     {t.leadership.expertName}
                   </div>
                   <div className="text-xs text-amber-400 font-semibold mt-0.5">
@@ -64,7 +64,7 @@ export default function LeadershipSection() {
                 <span className="inline-block text-[11px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-400 px-3 py-1 rounded border border-amber-500/30">
                   {t.leadership.expertBadge}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-serif font-black text-white mt-3">
+                <h3 className="text-2xl sm:text-4xl font-extrabold text-white mt-3 tracking-tight">
                   {t.leadership.expertName}
                 </h3>
                 <div className="text-sm font-semibold text-teal-300 mt-1">
@@ -123,7 +123,7 @@ export default function LeadershipSection() {
               <Shield className="w-3.5 h-3.5" />
               <span>{t.leadership.associateTitle}</span>
             </div>
-            <h4 className="text-lg font-serif font-bold text-navy-950">
+            <h4 className="text-lg font-bold text-slate-900">
               {t.leadership.associateName}
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
