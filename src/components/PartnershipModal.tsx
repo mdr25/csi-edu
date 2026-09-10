@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { X, CheckCircle2, Send, Building, User, Mail, Phone, MapPin } from "lucide-react";
+import { X, ArrowRight, MessageCircle, CheckCircle2, Building, Sparkles } from "lucide-react";
 
 export default function PartnershipModal() {
   const { isModalOpen, closeModal, t } = useLanguage();
@@ -32,82 +32,105 @@ export default function PartnershipModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-slate-900/70 backdrop-blur-xs">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-slate-950/65 backdrop-blur-md animate-in fade-in duration-200">
       <div
-        className="relative w-full max-w-xl bg-white rounded-xl shadow-2xl border border-slate-300 overflow-hidden my-8"
+        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl shadow-slate-950/20 border border-slate-100 overflow-hidden my-8 transition-all"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
+        {/* Modern Close Button */}
         <button
           type="button"
           onClick={handleReset}
-          className="absolute top-5 right-5 w-8 h-8 rounded bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors z-10"
+          className="absolute top-6 right-6 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all z-10"
+          aria-label="Tutup modal"
         >
           <X className="w-4 h-4" />
         </button>
 
         {submitted ? (
-          /* Confirmation Screen */
-          <div className="p-8 sm:p-10 text-center space-y-5">
-            <div className="w-14 h-14 bg-forest-600/10 text-forest-700 rounded-full flex items-center justify-center mx-auto">
-              <CheckCircle2 className="w-7 h-7 stroke-[2.5]" />
+          /* High-End Modern Confirmation Screen */
+          <div className="p-8 sm:p-12 text-center space-y-6">
+            <div className="w-16 h-16 bg-teal-50 text-teal-800 rounded-2xl flex items-center justify-center mx-auto shadow-sm border border-teal-100/80">
+              <CheckCircle2 className="w-8 h-8 text-teal-700" />
             </div>
 
-            <div className="space-y-2">
-              <h3 className="text-2xl font-extrabold text-slate-900">
+            <div className="space-y-2 max-w-md mx-auto">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
                 {t.modal.successTitle}
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed max-w-md mx-auto">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {t.modal.successDesc}
               </p>
             </div>
 
-            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 text-left text-xs space-y-1.5 text-slate-700">
-              <div className="font-bold text-navy-950 mb-1">Rincian Kontak:</div>
-              <div>• <strong>Lembaga:</strong> {formData.schoolName || "Sekolah Mitra"}</div>
-              <div>• <strong>Narahubung:</strong> {formData.picName || "Bapak/Ibu"} ({formData.picRole})</div>
-              <div>• <strong>WhatsApp:</strong> {formData.phone || "08xxxx"}</div>
-              <div>• <strong>Kota:</strong> {formData.city || "-"}</div>
+            {/* Clean summary block */}
+            <div className="p-5 rounded-2xl bg-slate-50/80 border border-slate-100 text-left text-xs sm:text-sm space-y-2 text-slate-700 max-w-lg mx-auto">
+              <div className="font-bold text-slate-900 pb-1 border-b border-slate-200/60">
+                Rincian Formulir Konsultasi:
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <span className="text-slate-500">Satuan Pendidikan:</span>
+                <span className="col-span-2 font-semibold text-slate-900">{formData.schoolName || "Sekolah Mitra"}</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <span className="text-slate-500">Narahubung:</span>
+                <span className="col-span-2 font-semibold text-slate-900">{formData.picName || "Bapak/Ibu"} ({formData.picRole})</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <span className="text-slate-500">WhatsApp:</span>
+                <span className="col-span-2 font-semibold text-teal-800">{formData.phone || "-"}</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <span className="text-slate-500">Kabupaten/Kota:</span>
+                <span className="col-span-2 font-semibold text-slate-900">{formData.city || "-"}</span>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-2.5 pt-2">
+            {/* Direct Outreach Action */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-2 max-w-md mx-auto">
               <a
                 href={`https://wa.me/6285695042915?text=Halo%20CSI%20EDU,%20saya%20sudah%20mengisi%20formulir%20konsultasi%20atas%20nama%20${encodeURIComponent(formData.picName || "Mitra")}%20dari%20${encodeURIComponent(formData.schoolName || "Sekolah")}.`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 py-3 px-4 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm transition-colors text-center inline-flex items-center justify-center gap-2 shadow-xs"
+                className="flex-1 py-4 px-6 rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-bold text-sm transition-all shadow-md shadow-teal-900/20 text-center inline-flex items-center justify-center gap-2 hover:-translate-y-0.5"
               >
+                <MessageCircle className="w-4 h-4 text-emerald-300" />
                 <span>Konfirmasi via WhatsApp</span>
               </a>
+
               <button
                 type="button"
                 onClick={handleReset}
-                className="py-3 px-5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-colors"
+                className="py-4 px-6 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-colors"
               >
-                Tutup
+                Selesai
               </button>
             </div>
           </div>
         ) : (
-          /* Formal Form */
-          <div className="p-6 sm:p-8 space-y-6 max-h-[90vh] overflow-y-auto">
-            <div className="space-y-1.5 pr-8 border-b border-slate-200 pb-4">
-              <div className="text-[11px] font-bold uppercase tracking-wider text-navy-800">
-                Konsultasi Kemitraan Sekolah
+          /* High-End Clean Modal Form */
+          <div className="p-8 sm:p-12 space-y-8 max-h-[88vh] overflow-y-auto">
+            {/* Header */}
+            <div className="space-y-3 pr-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200/60 text-teal-800 text-xs font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse" />
+                <span>Konsultasi Kemitraan Sekolah</span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight leading-tight">
                 {t.modal.title}
               </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
+
+              <p className="text-sm text-slate-500 leading-relaxed font-normal">
                 {t.modal.subtitle}
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-5">
               {/* School Name */}
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-slate-700 uppercase tracking-wide">
-                  {t.modal.schoolLabel}
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-slate-700">
+                  {t.modal.schoolLabel} <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -115,15 +138,15 @@ export default function PartnershipModal() {
                   placeholder="Contoh: SMA Negeri 1 / Yayasan Al-Azhar / SMP Taruna"
                   value={formData.schoolName}
                   onChange={(e) => setFormData({ ...formData, schoolName: e.target.value })}
-                  className="w-full px-3 py-2 text-sm rounded border border-slate-300 focus:outline-none focus:border-navy-800"
+                  className="w-full px-4 py-3 text-sm font-medium text-slate-900 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:bg-white focus:border-teal-700 focus:ring-4 focus:ring-teal-700/10 transition-all outline-none placeholder:text-slate-400"
                 />
               </div>
 
               {/* Name & Role */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wide">
-                    {t.modal.nameLabel}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-slate-700">
+                    {t.modal.nameLabel} <span className="text-rose-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -131,18 +154,18 @@ export default function PartnershipModal() {
                     placeholder="Nama Lengkap & Gelar"
                     value={formData.picName}
                     onChange={(e) => setFormData({ ...formData, picName: e.target.value })}
-                    className="w-full px-3 py-2 text-sm rounded border border-slate-300 focus:outline-none focus:border-navy-800"
+                    className="w-full px-4 py-3 text-sm font-medium text-slate-900 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:bg-white focus:border-teal-700 focus:ring-4 focus:ring-teal-700/10 transition-all outline-none placeholder:text-slate-400"
                   />
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wide">
-                    {t.modal.roleLabel}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-slate-700">
+                    {t.modal.roleLabel} <span className="text-rose-500">*</span>
                   </label>
                   <select
                     value={formData.picRole}
                     onChange={(e) => setFormData({ ...formData, picRole: e.target.value })}
-                    className="w-full px-3 py-2 text-sm rounded border border-slate-300 focus:outline-none focus:border-navy-800 bg-white"
+                    className="w-full px-4 py-3 text-sm font-medium text-slate-900 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:bg-white focus:border-teal-700 focus:ring-4 focus:ring-teal-700/10 transition-all outline-none cursor-pointer"
                   >
                     <option value="Kepala Sekolah">Kepala Sekolah / Madrasah</option>
                     <option value="Wakil Kurikulum">Wakil Kepala Bidang Kurikulum</option>
@@ -153,10 +176,10 @@ export default function PartnershipModal() {
               </div>
 
               {/* Phone & Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wide">
-                    {t.modal.phoneLabel}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-slate-700">
+                    {t.modal.phoneLabel} <span className="text-rose-500">*</span>
                   </label>
                   <input
                     type="tel"
@@ -164,13 +187,13 @@ export default function PartnershipModal() {
                     placeholder="Contoh: 0812-3456-7890"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-3 py-2 text-sm rounded border border-slate-300 focus:outline-none focus:border-navy-800"
+                    className="w-full px-4 py-3 text-sm font-medium text-slate-900 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:bg-white focus:border-teal-700 focus:ring-4 focus:ring-teal-700/10 transition-all outline-none placeholder:text-slate-400"
                   />
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wide">
-                    {t.modal.emailLabel}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-slate-700">
+                    {t.modal.emailLabel} <span className="text-rose-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -178,74 +201,95 @@ export default function PartnershipModal() {
                     placeholder="email@sekolah.sch.id"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3 py-2 text-sm rounded border border-slate-300 focus:outline-none focus:border-navy-800"
+                    className="w-full px-4 py-3 text-sm font-medium text-slate-900 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:bg-white focus:border-teal-700 focus:ring-4 focus:ring-teal-700/10 transition-all outline-none placeholder:text-slate-400"
                   />
                 </div>
               </div>
 
               {/* City */}
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-slate-700 uppercase tracking-wide">
-                  {t.modal.cityLabel}
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-slate-700">
+                  {t.modal.cityLabel} <span className="text-rose-500">*</span>
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="Contoh: Surabaya / Bandung / Yogyakarta"
+                  placeholder="Contoh: Surabaya / Bandung / Medan / Depok"
                   value={formData.city}
                   onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                  className="w-full px-3 py-2 text-sm rounded border border-slate-300 focus:outline-none focus:border-navy-800"
+                  className="w-full px-4 py-3 text-sm font-medium text-slate-900 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:bg-white focus:border-teal-700 focus:ring-4 focus:ring-teal-700/10 transition-all outline-none placeholder:text-slate-400"
                 />
               </div>
 
-              {/* Interest */}
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-slate-700 uppercase tracking-wide">
+              {/* Interest Selector - Modern Segmented Card Pills */}
+              <div className="space-y-2">
+                <label className="text-xs font-semibold text-slate-700">
                   {t.modal.interestLabel}
                 </label>
-                <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                <div className="grid grid-cols-3 gap-2.5">
                   {[
-                    { id: "academy", label: "CSI Academy (Guru)" },
-                    { id: "testing", label: "NF Testing & SRS" },
-                    { id: "both", label: "Kemitraan Terpadu" },
+                    { id: "academy", label: "CSI Academy", desc: "Pelatihan Guru" },
+                    { id: "testing", label: "SRS Literasi", desc: "Kuis Baca Siswa" },
+                    { id: "both", label: "Kemitraan Terpadu", desc: "Seluruh Program" },
                   ].map((p) => (
                     <button
                       key={p.id}
                       type="button"
                       onClick={() => setFormData({ ...formData, interest: p.id })}
-                      className={`p-2 rounded border font-semibold transition-colors ${
+                      className={`p-3 rounded-xl border text-left transition-all ${
                         formData.interest === p.id
-                          ? "bg-navy-900 text-white border-navy-900"
-                          : "bg-slate-50 text-slate-700 border-slate-300 hover:bg-slate-100"
+                          ? "bg-teal-900 text-white border-teal-900 shadow-sm"
+                          : "bg-slate-50/70 text-slate-700 border-slate-200/80 hover:bg-slate-100"
                       }`}
                     >
-                      {p.label}
+                      <div className="font-bold text-xs">{p.label}</div>
+                      <div className={`text-[10px] mt-0.5 ${formData.interest === p.id ? "text-teal-200" : "text-slate-400"}`}>
+                        {p.desc}
+                      </div>
                     </button>
                   ))}
                 </div>
               </div>
 
               {/* Notes */}
-              <div className="space-y-1">
-                <label className="text-xs font-bold text-slate-700 uppercase tracking-wide">
+              <div className="space-y-1.5">
+                <label className="text-xs font-semibold text-slate-700">
                   {t.modal.notesLabel}
                 </label>
                 <textarea
                   rows={2}
-                  placeholder="Contoh: Target persiapan akreditasi tahun 2027 atau penguatan rapor literasi..."
+                  placeholder="Ceritakan fokus prioritas atau kendala pembelajaran sekolah saat ini..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-3 py-2 text-sm rounded border border-slate-300 focus:outline-none focus:border-navy-800"
+                  className="w-full px-4 py-3 text-sm font-medium text-slate-900 rounded-xl bg-slate-50/70 border border-slate-200/80 focus:bg-white focus:border-teal-700 focus:ring-4 focus:ring-teal-700/10 transition-all outline-none placeholder:text-slate-400 resize-none"
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full py-3.5 rounded bg-navy-900 hover:bg-navy-800 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2"
-              >
-                <Send className="w-4 h-4" />
-                <span>{t.modal.submitBtn}</span>
-              </button>
+              {/* Submit Button */}
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-xl bg-teal-800 hover:bg-teal-700 text-white font-bold text-sm transition-all shadow-lg shadow-teal-900/20 hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2.5"
+                >
+                  <span>{t.modal.submitBtn}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Direct WhatsApp fast response note */}
+              <div className="text-center pt-1">
+                <span className="text-xs text-slate-500">
+                  Butuh koordinasi cepat? Hubungi via WhatsApp:{" "}
+                  <a
+                    href="https://wa.me/6285695042915?text=Halo%20CSI%20EDU,%20kami%20ingin%20berkonsultasi%20mengenai%20kemitraan%20sekolah."
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-bold text-teal-800 hover:underline"
+                  >
+                    +62 856-9504-2915
+                  </a>
+                </span>
+              </div>
             </form>
           </div>
         )}
